@@ -45,6 +45,13 @@ h1 {
 button {
 	font-family: sans-serif;
 }
+html{
+	overflow-x: hidden;
+}
+body{
+  cursor: url('../assets/images/lab-bottil.png') 16 16, auto;
+
+}
 
 p,
 ul,
