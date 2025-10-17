@@ -36,6 +36,153 @@
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/fav-icon.png" />
     <style>
+      :root {
+        --primary: #1c262f;
+        --primary-light: #212d37;
+        --secondary: #0ee951;
+        --tertiary: #00dabf;
+        --gradient: linear-gradient(to right, #0ee951, #00dabf);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background: rgba(28, 38, 47, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        background: rgba(28, 38, 47, 1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white !important;
+      }
+
+      .navbar-brand .home_text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 0;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        width: 25px;
+        height: 2px;
+        background: var(--secondary);
+        display: block;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before,
+      .navbar-toggler-icon::after {
+        content: '';
+        width: 25px;
+        height: 2px;
+        background: var(--secondary);
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before {
+        top: -8px;
+      }
+
+      .navbar-toggler-icon::after {
+        top: 8px;
+      }
+
+      .navbar-nav {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        padding: 0.5rem 1rem !important;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover {
+        color: var(--secondary) !important;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 80%;
+      }
+
+      .nav-link.active {
+        color: var(--secondary) !important;
+      }
+
+      /* Responsive fixes */
+      @media (max-width: 991px) {
+        .navbar-collapse {
+          background: var(--primary-light);
+          margin-top: 1rem;
+          padding: 1rem;
+          border-radius: 8px;
+        }
+
+        .nav-link::after {
+          display: none;
+        }
+      }
+
+      /* Navbar collapse animation */
+      .navbar-collapse {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Other existing styles */
       .about::before {
         content: "";
         position: absolute;
@@ -90,14 +237,12 @@
       }
 
       /* List Animations */
-      ul li {
-      }
-
       ul li span:first-child {
         display: inline-block;
       }
+
       .equal-card {
-        height: 360px; /* Set consistent height for all cards */
+        height: 360px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -118,6 +263,7 @@
         border-radius: 50%;
         object-fit: cover;
       }
+
       .service-link {
         display: block;
         height: 100%;
@@ -127,107 +273,35 @@
       .service-card {
         transition: all 0.3s ease;
         cursor: pointer;
-      }
-
-      .service-link:hover .service-card {
-        background: rgba(0, 212, 255, 0.1) !important;
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
-      }
-
-      .service-link:hover .service-card i {
-        color: #00d4ff;
-      }
-
-      .service-link:hover .service-card h4 {
-        color: #00d4ff;
-      }
-      /* Button Animation */
-      /* .btn {
-      background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-      color: #0f3460;
-      border: none;
-      padding: 12px 35px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    } */
-
-      /* .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.4s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
-      background: linear-gradient(135deg, #0099cc 0%, #00d4ff 100%);
-    } */
-
-      /* .btn:hover::before {
-      left: 100%;
-    } */
-
-      /* Image Animation */
-      .col-lg-5 {
-      }
-
-      .col-lg-5 img {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 2px solid rgba(14, 233, 81, 0.4) !important;
         border-radius: 15px;
-        box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
-        transition: all 0.5s ease;
+        padding: 40px 30px;
+        text-align: center;
+        height: 360px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        animation: cardScaleIn 0.6s ease-out;
+        animation-fill-mode: both;
       }
 
-      .col-lg-5 img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 30px 80px rgba(0, 212, 255, 0.5);
-      }
+      .col-lg-4:nth-child(1) .service-card { animation-delay: 0.1s; }
+      .col-lg-4:nth-child(2) .service-card { animation-delay: 0.2s; }
+      .col-lg-4:nth-child(3) .service-card { animation-delay: 0.3s; }
+      .col-lg-4:nth-child(4) .service-card { animation-delay: 0.4s; }
+      .col-lg-4:nth-child(5) .service-card { animation-delay: 0.5s; }
+      .col-lg-4:nth-child(6) .service-card { animation-delay: 0.6s; }
+      .col-lg-4:nth-child(7) .service-card { animation-delay: 0.7s; }
 
-      /* Keyframe Animations */
-      @keyframes slideInLeft {
+      @keyframes cardScaleIn {
         from {
           opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes slideInRight {
-        from {
-          opacity: 0;
-          transform: translateX(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes scaleIn {
-        from {
-          opacity: 0;
-          transform: scale(0.8);
+          transform: scale(0.85);
         }
         to {
           opacity: 1;
@@ -235,18 +309,218 @@
         }
       }
 
-      @keyframes floatImage {
-        0%,
-        100% {
-          transform: translateY(0px);
+      .service-link:hover .service-card {
+        background: rgba(14, 233, 81, 0.12) !important;
+        border-color: var(--secondary) !important;
+        transform: translateY(-20px);
+        box-shadow: 0 25px 60px rgba(14, 233, 81, 0.35),
+                    inset 0 1px 0 rgba(14, 233, 81, 0.2);
+      }
+
+      .service-card i {
+        font-size: 3.5rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        display: inline-block;
+      }
+
+      .service-link:hover .service-card i {
+        animation: iconFlip 0.8s ease-in-out;
+      }
+
+      @keyframes iconFlip {
+        0% { transform: rotateY(0deg) scale(1); }
+        50% { transform: rotateY(180deg) scale(1.2); }
+        100% { transform: rotateY(360deg) scale(1.2); }
+      }
+
+      .service-card h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 20px 0;
+        color: #ffffff;
+        transition: all 0.4s ease;
+        width: 100%;
+      }
+
+      .service-link:hover .service-card h4 {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transform: scale(1.05);
+      }
+
+      .service-card p {
+        color: #d0d0d0;
+        font-size: 1rem;
+        line-height: 1.6;
+        transition: all 0.4s ease;
+        flex-grow: 1;
+        width: 100%;
+      }
+
+      .service-link:hover .service-card p {
+        color: #ffffff;
+        transform: translateY(-5px);
+      }
+
+      .service-link:hover .service-card::before {
+        left: 100%;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(14, 233, 81, 0.3),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      /* Scrollbar for Webkit browsers */
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--primary);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, var(--secondary), var(--tertiary));
+        border-radius: 10px;
+        border: 2px solid var(--primary);
+        transition: all 0.3s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, var(--tertiary), var(--secondary));
+        box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        background: var(--secondary);
+      }
+
+      /* Firefox Scrollbar */
+      * {
+        scrollbar-color: var(--secondary) var(--primary);
+        scrollbar-width: thin;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          180deg,
+          var(--secondary) 0%,
+          var(--tertiary) 50%,
+          var(--secondary) 100%
+        );
+        box-shadow: 0 0 8px rgba(14, 233, 81, 0.4),
+                    inset 0 0 6px rgba(0, 0, 0, 0.1);
+      }
+
+      body::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0 0 15px rgba(14, 233, 81, 0.6),
+                    0 0 25px rgba(0, 218, 191, 0.4),
+                    inset 0 0 6px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Other existing styles */
+      section {
+        width: 100%;
+        overflow: visible !important;
+      }
+
+      .container, .container-fluid {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .services {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .services::before,
+      .services::after {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .row {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+      }
+
+      @media (max-width: 1200px) {
+        .services::before {
+          width: 300px;
+          right: -50px;
         }
-        50% {
-          transform: translateY(-10px);
+
+        .services::after {
+          width: 250px;
+          left: -50px;
         }
       }
 
-      /* Responsive */
       @media (max-width: 768px) {
+        .services::before {
+          display: none;
+        }
+
+        .services::after {
+          display: none;
+        }
+
+        section {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .services h2 {
+          font-size: 2rem;
+        }
+
+        .service-card {
+          height: auto;
+          min-height: 320px;
+        }
+
+        .services .text-center p:first-child {
+          font-size: 0.9rem;
+        }
+
+        .service-card i {
+          font-size: 2.5rem;
+        }
+
+        .service-card h4 {
+          font-size: 1.3rem;
+        }
+
         .about h1 {
           font-size: 2rem;
         }
@@ -273,11 +547,6 @@
           opacity: 1;
           transform: translateY(0);
         }
-      }
-      .services {
-        background: var(--primary);
-        position: relative;
-        overflow: visible;
       }
 
       .services::before {
@@ -350,70 +619,52 @@
         animation: slideInDown 0.8s ease-out 0.2s backwards;
       }
 
-      @keyframes slideInDown {
+      .col-lg-5 img {
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+        transition: all 0.5s ease;
+      }
+
+      .col-lg-5 img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 30px 80px rgba(0, 212, 255, 0.5);
+      }
+
+      @keyframes slideInLeft {
         from {
           opacity: 0;
-          transform: translateY(-30px);
+          transform: translateX(-50px);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateX(0);
         }
       }
 
-      /* Service Cards Enhanced */
-      .service-link {
-        display: block;
-        height: 100%;
-        text-decoration: none !important;
-        cursor: pointer;
-      }
-
-      .service-card {
-        background: rgba(255, 255, 255, 0.03) !important;
-        border: 2px solid rgba(14, 233, 81, 0.4) !important;
-        border-radius: 15px;
-        padding: 40px 30px;
-        text-align: center;
-        height: 360px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        position: relative;
-        overflow: hidden;
-        animation: cardScaleIn 0.6s ease-out;
-        animation-fill-mode: both;
-      }
-
-      .col-lg-4:nth-child(1) .service-card {
-        animation-delay: 0.1s;
-      }
-      .col-lg-4:nth-child(2) .service-card {
-        animation-delay: 0.2s;
-      }
-      .col-lg-4:nth-child(3) .service-card {
-        animation-delay: 0.3s;
-      }
-      .col-lg-4:nth-child(4) .service-card {
-        animation-delay: 0.4s;
-      }
-      .col-lg-4:nth-child(5) .service-card {
-        animation-delay: 0.5s;
-      }
-      .col-lg-4:nth-child(6) .service-card {
-        animation-delay: 0.6s;
-      }
-      .col-lg-4:nth-child(7) .service-card {
-        animation-delay: 0.7s;
-      }
-
-      @keyframes cardScaleIn {
+      @keyframes slideInRight {
         from {
           opacity: 0;
-          transform: scale(0.85);
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
         }
         to {
           opacity: 1;
@@ -421,268 +672,15 @@
         }
       }
 
-      /* Shimmer Effect */
-      .service-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(14, 233, 81, 0.3),
-          transparent
-        );
-        transition: left 0.6s ease;
-      }
-
-      .service-link:hover .service-card::before {
-        left: 100%;
-      }
-
-      /* Hover State */
-      .service-link:hover .service-card {
-        background: rgba(14, 233, 81, 0.12) !important;
-        border-color: var(--secondary) !important;
-        transform: translateY(-20px);
-        box-shadow: 0 25px 60px rgba(14, 233, 81, 0.35),
-          inset 0 1px 0 rgba(14, 233, 81, 0.2);
-      }
-
-      /* Icon Styling */
-      .service-card i {
-        font-size: 3.5rem;
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 20px;
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        display: inline-block;
-      }
-
-      /* Icon Flip Animation on Hover */
-      .service-link:hover .service-card i {
-        animation: iconFlip 0.8s ease-in-out;
-      }
-
-      @keyframes iconFlip {
-        0% {
-          transform: rotateY(0deg) scale(1);
+      @keyframes floatImage {
+        0%,
+        100% {
+          transform: translateY(0px);
         }
         50% {
-          transform: rotateY(180deg) scale(1.2);
-        }
-        100% {
-          transform: rotateY(360deg) scale(1.2);
+          transform: translateY(-10px);
         }
       }
-
-      /* Title Animation */
-      .service-card h4 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 20px 0;
-        color: #ffffff;
-        transition: all 0.4s ease;
-        width: 100%;
-      }
-
-      .service-link:hover .service-card h4 {
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        transform: scale(1.05);
-      }
-
-      /* Description Animation */
-      .service-card p {
-        color: #d0d0d0;
-        font-size: 1rem;
-        line-height: 1.6;
-        transition: all 0.4s ease;
-        flex-grow: 1;
-        width: 100%;
-      }
-
-      .service-link:hover .service-card p {
-        color: #ffffff;
-        transform: translateY(-5px);
-      }
-
-      /* Border Glow on Hover */
-      .service-link:hover .service-card {
-        border-image: var(--gradient) 1;
-        border: 2px solid;
-        border-image-slice: 1;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .services h2 {
-          font-size: 2rem;
-        }
-
-        .service-card {
-          height: auto;
-          min-height: 320px;
-        }
-
-        .services .text-center p:first-child {
-          font-size: 0.9rem;
-        }
-
-        .service-card i {
-          font-size: 2.5rem;
-        }
-
-        .service-card h4 {
-          font-size: 1.3rem;
-        }
-      }
-      * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Ensure all sections fit properly */
-  section {
-    width: 100%;
-    overflow: visible !important;
-  }
-
-  .container, .container-fluid {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /* Fix for services section specifically */
-  .services {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .services::before,
-  .services::after {
-    position: absolute;
-    pointer-events: none;
-  }
-
-  /* Remove overflow from row */
-  .row {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-  }
-
-  /* Prevent pseudo-elements from causing overflow */
-  .about::before {
-    position: absolute;
-    pointer-events: none;
-  }
-
-  /* Responsive fixes */
-  @media (max-width: 1200px) {
-    .services::before {
-      width: 300px;
-      right: -50px;
-    }
-
-    .services::after {
-      width: 250px;
-      left: -50px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .services::before {
-      display: none;
-    }
-
-    .services::after {
-      display: none;
-    }
-
-    section {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  :root {
-    --primary: #1c262f;
-    --primary-light: #212d37;
-    --secondary: #0ee951;
-    --tertiary: #00dabf;
-    --gradient: linear-gradient(to right, #0ee951, #00dabf);
-  }
-
-  /* Scrollbar for Webkit browsers (Chrome, Safari, Edge) */
-  ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--primary);
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, var(--secondary), var(--tertiary));
-    border-radius: 10px;
-    border: 2px solid var(--primary);
-    transition: all 0.3s ease;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, var(--tertiary), var(--secondary));
-    box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
-  }
-
-  ::-webkit-scrollbar-thumb:active {
-    background: var(--secondary);
-  }
-
-  /* Firefox Scrollbar */
-  * {
-    scrollbar-color: var(--secondary) var(--primary);
-    scrollbar-width: thin;
-  }
-
-  /* For better appearance on hover */
-  *::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Optional: Add glow effect to scrollbar */
-  body::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      180deg,
-      var(--secondary) 0%,
-      var(--tertiary) 50%,
-      var(--secondary) 100%
-    );
-    box-shadow: 0 0 8px rgba(14, 233, 81, 0.4),
-                inset 0 0 6px rgba(0, 0, 0, 0.1);
-  }
-
-  body::-webkit-scrollbar-thumb:hover {
-    box-shadow: 0 0 15px rgba(14, 233, 81, 0.6),
-                0 0 25px rgba(0, 218, 191, 0.4),
-                inset 0 0 6px rgba(0, 0, 0, 0.2);
-  }
     </style>
   </head>
   <body>
@@ -691,22 +689,23 @@
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
           <span class="fw-bold text-uppercase" style="font-size: 1.25rem">
-            <img src="./assets/images/logo.png" alt="logo" srcset=""  style="width: 170px;">
+            <img src="./assets/images/logo.png" alt="logo" style="width: 170px;">
           </span>
         </a>
 
         <button
           class="navbar-toggler p-0 border-0"
           type="button"
-          id="navbarSideCollapse"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          class="navbar-collapse offcanvas-collapse"
-          id="navbarsExampleDefault"
-        >
+        <div class="collapse navbar-collapse" id="navbarContent">
           <ul
             class="navbar-nav ms-auto navbar-nav-scroll"
             style="font-size: 1.1rem; font-weight: 500"
@@ -718,7 +717,6 @@
               <a class="nav-link" href="index.html#about">About</a>
             </li>
             <li class="nav-item">
-              <!-- Changed to link to services.html -->
               <a class="nav-link" href="service.html">Services</a>
             </li>
             <li class="nav-item">
@@ -728,9 +726,7 @@
         </div>
       </div>
     </nav>
-
     <!-- end of navbar -->
-    <!-- end of navigation -->
 
     <!-- Home -->
     <section class="home py-5 d-flex align-items-center" id="header">
@@ -739,8 +735,6 @@
           Bahrain's<span class="home_text"> Trusted Lab</span><br />
           for Quality & Compliance.
         </h1>
-
-        <!-- <h1 class="headline">Best <span class="home_text">Broadband</span><br>Internet Plans For You</h1> -->
         <p class="para para-light py-3">
           Reliable Laboratory Testing Services W.L.L. is a state-of-the-art
           independent laboratory based in The Kingdom of Bahrain. We deliver
@@ -748,56 +742,12 @@
           decisions across a broad spectrum of industries, including Water &
           Wastewater, Environmental, Construction, Food, and Petroleum Products.
         </p>
-        <!-- <div class="d-flex align-items-center">
-                <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>  
-            </div> -->
-        <!-- <div class="d-flex align-items-center">
-                <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>  
-            </div> -->
         <div class="my-3">
           <a class="btn" href="#contact">Contact Us</a>
         </div>
       </div>
-      <!-- end of container -->
     </section>
     <!-- end of home -->
-
-    <!-- Information -->
-     
-    <!-- <section class="information">
-      <div class="container-fluid">
-        <div class="row text-light">
-          <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
-            <i class="fas fa-tachometer-alt fa-3x p-2"></i>
-            <h4 class="py-3">Download 1 GBPS</h4>
-            <p class="para-light">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-              odit consequatur doloribus natus in suscipit!
-            </p>
-          </div>
-          <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
-            <i class="fas fa-clock fa-3x p-2"></i>
-            <h4 class="py-3">99% Internet Uptime</h4>
-            <p class="para-light">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-              odit consequatur doloribus natus in suscipit!
-            </p>
-          </div>
-          <div class="col-lg-4 text-center p-5 text-dark" data-aos="zoom-in">
-            <i class="fas fa-headset fa-3x p-2"></i>
-            <h4 class="py-3">24/7 Support</h4>
-            <p class="para-light">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-              odit consequatur doloribus natus in suscipit!
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- end of information -->
 
     <!-- About -->
     <section
@@ -862,7 +812,6 @@
         </div>
       </div>
     </section>
-
     <!-- end of about -->
 
     <!-- Services -->
@@ -984,113 +933,7 @@
         </div>
       </div>
     </section>
-
     <!-- end of services -->
-
-    <!-- Plans -->
-    <!-- <section class="plans d-flex align-items-center py-5" id="plans">
-      <div class="container text-light">
-        <div class="text-center pb-4">
-          <p>OUR PLANS</p>
-          <h2 class="py-2">Explore unlimited possibilities</h2>
-          <p class="para-light">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            asperiores, quia accusantium sunt corporis optio recusandae? Nostrum
-            libero pariatur cumque, ipsa dolores voluptatibus voluptate alias
-            sit fuga. Itaque, ea quo.
-          </p>
-        </div>
-        <div class="row gy-4" data-aos="zoom-in">
-          <div class="col-lg-4">
-            <div class="card bg-transparent px-4">
-              <h4 class="py-2">BASIC BUNDLE</h4>
-              <p class="py-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <h4 class="py-3">$24/Month</h4>
-              <div class="my-3">
-                <a class="btn" href="#your-link">View Plans</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="card bg-transparent px-4">
-              <h4 class="py-2">BUSINESS BUNDLE</h4>
-              <p class="py-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <h4 class="py-3">$99/Month</h4>
-              <div class="my-3">
-                <a class="btn" href="#your-link">View Plans</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="card bg-transparent px-4">
-              <h4 class="py-2">PREMIUM BUNDLE</h4>
-              <p class="py-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="block d-flex align-items-center">
-                <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <h4 class="py-3">$199/Month</h4>
-              <div class="my-3">
-                <a class="btn" href="#your-link">View Plans</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- end of plans -->
 
     <!-- Work -->
     <section class="plans d-flex align-items-center py-5" id="plans">
@@ -1189,7 +1032,6 @@
       </div>
       <!-- end of container -->
     </section>
-
     <!-- end of work -->
 
     <!-- Testimonials -->
@@ -1325,39 +1167,7 @@
         </div>
       </div>
     </div>
-
     <!-- end of testimonials -->
-
-    <!-- Newsletter -->
-    <!-- <section class="newsletter text-light py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
-        <h4 class="py-1">Stay Updated With Our Latest Insights</h4>
-        <p class="para-light">
-          Subscribe to our newsletter to receive updates on testing innovations,
-          environmental standards, and industry best practices. Get the latest
-          news, case studies, and expert articles from Reliable Laboratory Testing Services W.L.L.
-        </p>
-      </div>
-      <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-        <div class="input-group my-3">
-          <input
-            type="email"
-            class="form-control p-2"
-            placeholder="Enter your email address"
-            aria-label="Recipient's email"
-          />
-          <button class="btn-secondary text-light" type="button">
-            Subscribe
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-    <!-- end of newsletter -->
 
     <!-- Contact -->
     <section class="newsletter text-light py-5" id="contact">
@@ -1434,7 +1244,6 @@
         </div>
       </div>
     </section>
-
     <!-- end of contact -->
 
     <!-- Location -->
@@ -1532,12 +1341,6 @@
                   >Our Services</a
                 >
               </div>
-              <!-- <div class="d-flex align-items-center py-2">
-                <i class="fas fa-caret-right"></i>
-                <a href="#gallery" class="ms-3 text-light text-decoration-none"
-                  >Gallery</a
-                >
-              </div> -->
               <div class="d-flex align-items-center py-2">
                 <i class="fas fa-caret-right"></i>
                 <a href="#contact" class="ms-3 text-light text-decoration-none"
@@ -1591,7 +1394,6 @@
       </div>
       <!-- end of container -->
     </div>
-
     <!-- end of bottom -->
 
     <!-- Back To Top Button -->
@@ -1602,14 +1404,33 @@
 
     <!-- Scripts -->
     <script src="./js/bootstrap.min.js"></script>
-    <!-- Bootstrap framework -->
     <script src="./js/purecounter.min.js"></script>
-    <!-- Purecounter counter for statistics numbers -->
     <script src="./js/swiper.min.js"></script>
-    <!-- Swiper for image and text sliders -->
     <script src="./js/aos.js"></script>
-    <!-- AOS on Animation Scroll -->
     <script src="./js/script.js"></script>
-    <!-- Custom scripts -->
+    <script>
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992) {
+            const navbarContent = document.getElementById('navbarContent');
+            if (navbarContent) {
+              const bsCollapse = new bootstrap.Collapse(navbarContent, { toggle: false });
+              bsCollapse.hide();
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
