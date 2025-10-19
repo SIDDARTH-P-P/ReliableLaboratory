@@ -16,10 +16,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="./css/aos.min.css" rel="stylesheet" />
+    <link href="./css/swiper.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="icon" href="./assets/images/fav-icon.png" />
 
     <style>
       /* Prevent horizontal scroll - ONLY FIX */
@@ -33,7 +35,6 @@
         max-width: 100%;
         margin: 0;
         padding: 0;
-        font-family: 'Poppins', sans-serif;
       }
 
       .row {
@@ -270,6 +271,19 @@
         }
       }
 
+      /* Typewriter Effect */
+      .typewriter {
+        display: inline-block;
+        border-right: 3px solid #0ee951;
+        animation: blink 0.7s step-end infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
       /* Fade In Up Animations */
       .animate-fadeInUp {
         opacity: 0;
@@ -306,7 +320,6 @@
         display: inline-flex;
         align-items: center;
         border-radius: 0;
-        text-decoration: none;
       }
 
       .btn-home::before {
@@ -346,7 +359,6 @@
         display: inline-flex;
         align-items: center;
         border-radius: 0;
-        text-decoration: none;
       }
 
       .btn-home-outline:hover {
@@ -547,7 +559,6 @@
         background-size: cover;
         background-position: center;
       }
-      
       /* Enhanced service cards */
       .service-card {
         position: relative;
@@ -668,19 +679,6 @@
         color: rgba(255, 255, 255, 0.85);
         text-shadow: 0 0 20px rgba(14, 233, 81, 0.6);
       }
-
-      .service-link {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
       /* Responsive Design */
       @media (max-width: 992px) {
         .home .headline {
@@ -697,6 +695,10 @@
           padding: 12px 30px;
           font-size: 1rem;
         }
+
+        /* .service-card {
+        min-height: 280px;
+    } */
       }
 
       @media (max-width: 768px) {
@@ -710,20 +712,18 @@
           line-height: 1.7;
         }
 
-        .btn-home,
         .btn-home-outline {
-          display: inline-block;
-          padding: 12px 25px;
-          font-size: 0.95rem;
-        }
-
-        .btn-home-outline {
-          margin-left: 0.5rem !important;
+          margin-top: 1rem;
+          margin-left: 0 !important;
         }
 
         .shape {
           display: none;
         }
+
+        /* .service-card {
+        min-height: 260px;
+    } */
       }
 
       @media (max-width: 576px) {
@@ -737,13 +737,15 @@
 
         .btn-home,
         .btn-home-outline {
-          padding: 10px 20px;
-          font-size: 0.9rem;
+          width: 100%;
+          justify-content: center;
+          margin-bottom: 1rem;
         }
 
-        .btn-home-outline {
-          margin-left: 0.5rem !important;
-        }
+        /* .service-card {
+        min-height: 240px;
+        padding: 25px 15px;
+    } */
       }
 
       /* Scrollbar */
@@ -752,7 +754,7 @@
       }
 
       ::-webkit-scrollbar-track {
-        background: var(--primary-dark);
+        background: var(--primary);
       }
 
       ::-webkit-scrollbar-thumb {
@@ -762,47 +764,17 @@
           var(--tertiary)
         );
         border-radius: 10px;
-        border: 2px solid var(--primary-dark);
+        border: 2px solid var(--primary);
       }
 
       ::-webkit-scrollbar-thumb:hover {
         box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
       }
-
-      /* Back to top button */
-      #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: var(--secondary);
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 50%;
-        font-size: 18px;
-        width: 50px;
-        height: 50px;
-        transition: all 0.3s ease;
-      }
-
-      #myBtn:hover {
-        background-color: var(--tertiary);
-        transform: translateY(-5px);
-      }
-
-      #myBtn img {
-        width: 20px;
-        height: 20px;
-        filter: brightness(0) invert(1);
-      }
+      
     </style>
   </head>
   <body>
-    <!-- WHITE Navigation -->
+    <!-- White Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -827,10 +799,10 @@
             style="font-size: 1.1rem; font-weight: 500"
           >
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="about.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="service.html">Services</a>
@@ -863,12 +835,12 @@
             Wastewater, Environmental, Construction, Food, and Petroleum
             Products.
           </p>
-          <div class="my-4 animate-fadeInUp delay-2">
-            <a class="btn btn-home glow-on-hover mb-1 mb-md-0" href="#contact">
+          <div class="my-4 animate-fadeInUp delay-2 d-flex d-grid d-sm-flex gap-2">
+            <a class="btn btn-home glow-on-hover" href="#contact">
               <span>Contact Us</span>
               <i class="fas fa-arrow-right ms-2"></i>
             </a>
-            <a class="btn btn-home-outline ms-0 ms-md-3" href="service.html">
+            <a class="btn btn-home button-services" href="service.html">
               <span>Our Services</span>
             </a>
           </div>
@@ -941,7 +913,7 @@
 
           <div class="col-lg-5 text-center" data-aos="fade-left">
             <img
-              src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop"
+              src="assets/images/about.jpg"
               alt="About Reliable Lab"
               class="img-fluid rounded shadow-lg"
             />
@@ -950,8 +922,9 @@
       </div>
     </section>
 
-    <!-- Services Section - DARK -->
-    <section class="services py-5 section-dark" id="services">
+    <!-- Services Section - DARK with Simple Clean Cards -->
+    <!-- Services -->
+    <section class="services py-5" id="services" style="height: auto">
       <div class="container text-light">
         <div class="text-center pb-4">
           <p>OUR CORE TESTING SERVICES</p>
@@ -1069,7 +1042,7 @@
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right">
             <img
               class="img-fluid rounded shadow"
-              src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&h=600&fit=crop"
+              src="./assets/images/work.jpg"
               alt="Reliable Laboratory Testing"
             />
           </div>
@@ -1152,7 +1125,7 @@
 
     <!-- Testimonials Section - DARK -->
     <div
-      class="slider-1 testimonial section-dark text-light d-flex align-items-center reveal py-5"
+      class="slider-1 testimonial section-dark text-light d-flex align-items-center reveal"
     >
       <div class="container">
         <div class="row">
@@ -1192,7 +1165,7 @@
                         <div>
                           <img
                             class="avatar"
-                            src="https://i.pravatar.cc/150?img=5"
+                            src="./assets/images/testimonial-1.jpg"
                             alt="testimonial"
                           />
                         </div>
@@ -1218,7 +1191,7 @@
                         <div>
                           <img
                             class="avatar"
-                            src="https://i.pravatar.cc/150?img=12"
+                            src="./assets/images/testimonial-2.jpg"
                             alt="testimonial"
                           />
                         </div>
@@ -1242,7 +1215,7 @@
                         <div>
                           <img
                             class="avatar"
-                            src="https://i.pravatar.cc/150?img=9"
+                            src="./assets/images/testimonial-3.jpg"
                             alt="testimonial"
                           />
                         </div>
@@ -1255,7 +1228,7 @@
                   </div>
 
                   <div class="swiper-slide">
-                    <div class="testimonial-card p-4 equal-card mt-3">
+                    <div class="testimonial-card p-4 equal-card  mt-3">
                       <p>
                         "We've been using their petroleum product testing
                         services for over two years. The precision and
@@ -1266,7 +1239,7 @@
                         <div>
                           <img
                             class="avatar"
-                            src="https://i.pravatar.cc/150?img=15"
+                            src="./assets/images/testimonial-4.jpg"
                             alt="testimonial"
                           />
                         </div>
@@ -1363,7 +1336,7 @@
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
             <img
               class="img-fluid d-none d-lg-block rounded shadow"
-              src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&h=600&fit=crop"
+              src="./assets/images/contact.jpg"
               alt="contact illustration"
               style="max-width: 90%; height: auto"
             />
@@ -1528,31 +1501,16 @@
 
     <!-- Back To Top Button -->
     <button onclick="topFunction()" id="myBtn">
-      <i class="fas fa-arrow-up"></i>
+      <img src="assets/images/up-arrow.png" alt="alternative" />
     </button>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/purecounter.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/script.js"></script>
     <script>
-      // Back to top button
-      let mybutton = document.getElementById("myBtn");
-      
-      window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      };
-      
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-
       // Navbar scroll effect
       window.addEventListener("scroll", function () {
         const navbar = document.querySelector(".navbar");
@@ -1625,25 +1583,6 @@
 
       const statsSection = document.querySelector(".plans");
       if (statsSection) counterObserver.observe(statsSection);
-
-      // Initialize Swiper
-      const swiper = new Swiper('.card-slider', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        },
-      });
 
       // Initialize AOS
       AOS.init({
