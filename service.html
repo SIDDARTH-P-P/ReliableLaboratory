@@ -3,32 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Explore our comprehensive laboratory testing services" />
+    <title>Services - Reliable Laboratory</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
-    <!-- OG Meta Tags -->
-    <meta property="og:site_name" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Webpage Title -->
-    <title>Reliable Laboratory</title>
-
-    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="./css/bootstrap.min.css" rel="stylesheet" />
-    <link href="./css/fontawesome-all.min.css" rel="stylesheet" />
-    <link href="./css/aos.min.css" rel="stylesheet" />
-    <link href="./css/swiper.css" rel="stylesheet" />
-    <link href="./css/style.css" rel="stylesheet" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/images/fav-icon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
     <style>
         :root {
@@ -45,14 +25,19 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
+            overflow-x: hidden;
         }
 
-        /* Navbar Styles */
+        /* Navbar */
         .navbar {
             background: rgba(28, 38, 47, 0.95);
             backdrop-filter: blur(10px);
@@ -65,27 +50,9 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .navbar-brand {
-            font-size: 1.25rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: white !important;
-        }
-
-        .navbar-brand .home_text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .navbar-toggler {
             border: none;
             padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
         }
 
         .navbar-toggler-icon {
@@ -108,24 +75,15 @@
             transition: all 0.3s ease;
         }
 
-        .navbar-toggler-icon::before {
-            top: -8px;
-        }
-
-        .navbar-toggler-icon::after {
-            top: 8px;
-        }
-
-        .navbar-nav {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+        .navbar-toggler-icon::before { top: -8px; }
+        .navbar-toggler-icon::after { top: 8px; }
 
         .nav-link {
             color: rgba(255, 255, 255, 0.8) !important;
             padding: 0.5rem 1rem !important;
             transition: all 0.3s ease;
             position: relative;
+            font-weight: 500;
         }
 
         .nav-link::after {
@@ -140,7 +98,8 @@
             transform: translateX(-50%);
         }
 
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link.active {
             color: var(--secondary) !important;
         }
 
@@ -149,11 +108,6 @@
             width: 80%;
         }
 
-        .nav-link.active {
-            color: var(--secondary) !important;
-        }
-
-        /* Responsive fixes */
         @media (max-width: 991px) {
             .navbar-collapse {
                 background: var(--primary-light);
@@ -161,22 +115,50 @@
                 padding: 1rem;
                 border-radius: 8px;
             }
-
-            .nav-link::after {
-                display: none;
-            }
+            .nav-link::after { display: none; }
         }
 
-        /* Navbar collapse animation */
-        .navbar-collapse {
-            transition: all 0.3s ease-in-out;
-        }
-
+        /* Header Section */
         .header-section {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 120px 20px 80px;
+            padding: 180px 20px 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 233, 81, 0.15) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 218, 191, 0.15) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .header-section .container {
+            position: relative;
+            z-index: 2;
         }
 
         .header-label {
@@ -186,12 +168,14 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 15px;
+            animation: fadeInUp 1s ease-out;
         }
 
         .header-section h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
             font-weight: 700;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
         .header-description {
@@ -199,15 +183,31 @@
             margin: 0 auto;
             font-size: 1.1em;
             opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cards Container */
         .cards-container {
             max-width: 1400px;
             margin: -50px auto 60px;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 25px;
+            position: relative;
+            z-index: 10;
         }
 
         .service-card {
@@ -216,22 +216,69 @@
             border-radius: 12px;
             padding: 20px 30px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
             gap: 15px;
+            position: relative;
+            overflow: hidden;
+            width: calc(25% - 19px);
+            min-width: 280px;
+            max-width: 320px;
+        }
+
+        @media (max-width: 1400px) {
+            .service-card {
+                width: calc(33.333% - 17px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .service-card {
+                width: calc(50% - 13px);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .service-card {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+            opacity: 0.05;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
             border-color: var(--secondary);
-            box-shadow: 0 10px 20px rgba(14, 233, 81, 0.2);
+            box-shadow: 0 15px 35px rgba(14, 233, 81, 0.3);
         }
 
         .card-icon {
             font-size: 32px;
             flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .card-icon {
+            transform: rotateY(360deg) scale(1.2);
         }
 
         .service-card h3 {
@@ -239,8 +286,15 @@
             color: var(--primary);
             font-weight: 600;
             text-align: left;
+            margin: 0;
+            transition: all 0.3s ease;
         }
 
+        .service-card:hover h3 {
+            color: var(--secondary);
+        }
+
+        /* Content Section */
         .content-section {
             max-width: 1200px;
             margin: 0 auto 80px;
@@ -253,6 +307,14 @@
             align-items: center;
             margin-bottom: 100px;
             scroll-margin-top: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .service-detail.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .service-detail:nth-child(even) {
@@ -267,6 +329,19 @@
             color: var(--primary);
             font-size: 2em;
             margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .service-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
         }
 
         .service-content .intro-text {
@@ -287,10 +362,11 @@
         }
 
         .service-content ul li {
-            padding-left: 25px;
+            padding-left: 30px;
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #4b5563;
+            line-height: 1.7;
         }
 
         .service-content ul li:before {
@@ -299,11 +375,13 @@
             left: 0;
             color: var(--secondary);
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         .service-image {
             flex: 1;
             max-width: 500px;
+            position: relative;
         }
 
         .service-image img {
@@ -312,8 +390,95 @@
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
         }
 
+        .service-image:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(14, 233, 81, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-light);
+            color: #d0d0d0;
+            padding: 60px 0 30px;
+        }
+
+        .footer h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .footer a {
+            color: #d0d0d0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer .social-links a {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .footer .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        .bottom {
+            background: black;
+            color: #bfbfbf;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--secondary), var(--tertiary));
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
+        }
+
+        /* Animations */
+        @keyframes cardStagger {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:nth-child(1) { animation: cardStagger 0.6s ease-out 0.1s backwards; }
+        .service-card:nth-child(2) { animation: cardStagger 0.6s ease-out 0.2s backwards; }
+        .service-card:nth-child(3) { animation: cardStagger 0.6s ease-out 0.3s backwards; }
+        .service-card:nth-child(4) { animation: cardStagger 0.6s ease-out 0.4s backwards; }
+        .service-card:nth-child(5) { animation: cardStagger 0.6s ease-out 0.5s backwards; }
+        .service-card:nth-child(6) { animation: cardStagger 0.6s ease-out 0.6s backwards; }
+        .service-card:nth-child(7) { animation: cardStagger 0.6s ease-out 0.7s backwards; }
+
+        /* Responsive */
         @media (max-width: 968px) {
             .service-detail,
             .service-detail:nth-child(even) {
@@ -324,523 +489,35 @@
                 max-width: 100%;
             }
 
-            .cards-container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
             .header-section h1 {
                 font-size: 2em;
             }
-        }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .about::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: radial-gradient(
-                circle at 20% 50%,
-                rgba(0, 212, 255, 0.1) 0%,
-                transparent 50%
-            );
-            animation: moveGradient 15s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes moveGradient {
-            0%, 100% {
-                left: -100%;
+            .service-image img {
+                height: 300px;
             }
-            50% {
-                left: 0%;
-            }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .about > .container > .row > .col-lg-7 > p:first-child {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: #00d4ff;
-            font-weight: 600;
-        }
-
-        .about h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 1rem 0;
-            line-height: 1.3;
-        }
-
-        .para-light {
-            color: #d0d0d0;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        ul li span:first-child {
-            display: inline-block;
-        }
-
-        .equal-card {
-            height: 360px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-        }
-
-        .testimonial-card p {
-            flex-grow: 1;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .service-link {
-            display: block;
-            height: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .service-card {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .service-link:hover .service-card {
-            background: rgba(0, 212, 255, 0.1) !important;
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
-        }
-
-        .service-link:hover .service-card i {
-            color: #00d4ff;
-        }
-
-        .service-link:hover .service-card h4 {
-            color: #00d4ff;
-        }
-
-        /* Footer Styles */
-        footer {
-            background: var(--primary-light);
-            color: #d0d0d0;
-            padding: 60px 0 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: "";
-            position: absolute;
-            top: -30%;
-            right: -20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 218, 191, 0.1) 0%, transparent 70%);
-            animation: float 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        footer::after {
-            content: "";
-            position: absolute;
-            bottom: -20%;
-            left: -10%;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(14, 233, 81, 0.08) 0%, transparent 70%);
-            animation: float 10s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .footer-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 15px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .footer-description {
-            max-width: 400px;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #bfbfbf;
-            margin-bottom: 25px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            color: #d0d0d0;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--secondary);
-            text-decoration: underline dashed var(--secondary);
-            text-underline-offset: 4px;
-        }
-
-        .footer-social {
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            display: inline-block;
-            color: #d0d0d0;
-            font-size: 1.3rem;
-            margin-right: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: var(--tertiary);
-            transform: translateY(-5px);
-        }
-
-        .footer-divider {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 40px 0 20px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #a0a0a0;
-        }
-
-        .footer-bottom a {
-            color: var(--secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--tertiary);
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            footer {
-                text-align: center;
-                padding: 50px 20px 20px;
-            }
-
-            .footer-description {
-                margin: 0 auto 20px;
-            }
-
-            .footer-links ul li {
-                display: inline-block;
-                margin: 0 10px;
-            }
-
-            .footer-social a {
-                margin: 10px;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(25px);
-            }
-        }
-
-        .col-lg-5 img {
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
-            transition: all 0.5s ease;
-        }
-
-        .col-lg-5 img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 30px 80px rgba(0, 212, 255, 0.5);
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes floatImage {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .about h1 {
-                font-size: 2rem;
-            }
-
-            .para-light {
-                font-size: 0.95rem;
-            }
-
-            ul li {
-                font-size: 0.95rem;
-            }
-
-            .col-lg-5 {
-                animation: slideInDown 1s ease-out 0.3s backwards;
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .services {
-            background: var(--primary);
-            position: relative;
-            overflow: visible;
-        }
-
-        .services::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(14, 233, 81, 0.08) 0%, transparent 70%);
-            animation: float 6s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .services::after {
-            content: "";
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 218, 191, 0.08) 0%, transparent 70%);
-            animation: float 8s ease-in-out infinite;
-            animation-delay: 2s;
-            pointer-events: none;
-        }
-
-        .services .text-center p:first-child {
-            text-transform: uppercase;
-            color: var(--secondary);
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            animation: slideInDown 0.8s ease-out;
-        }
-
-        .services .text-center h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideInDown 0.8s ease-out 0.1s backwards;
-        }
-
-        .services .text-center > .para-light {
-            color: #d0d0d0;
-            max-width: 600px;
-            margin: 0 auto;
-            animation: slideInDown 0.8s ease-out 0.2s backwards;
-        }
-
-        .col-lg-4:nth-child(1) .service-card { animation-delay: 0.1s; }
-        .col-lg-4:nth-child(2) .service-card { animation-delay: 0.2s; }
-        .col-lg-4:nth-child(3) .service-card { animation-delay: 0.3s; }
-        .col-lg-4:nth-child(4) .service-card { animation-delay: 0.4s; }
-        .col-lg-4:nth-child(5) .service-card { animation-delay: 0.5s; }
-        .col-lg-4:nth-child(6) .service-card { animation-delay: 0.6s; }
-        .col-lg-4:nth-child(7) .service-card { animation-delay: 0.7s; }
-
-        @keyframes cardScaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.85);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .service-link:hover .service-card {
-            background: rgba(14, 233, 81, 0.12) !important;
-            border-color: var(--secondary) !important;
-            transform: translateY(-20px);
-            box-shadow: 0 25px 60px rgba(14, 233, 81, 0.35), inset 0 1px 0 rgba(14, 233, 81, 0.2);
-        }
-
-        @keyframes iconFlip {
-            0% { transform: rotateY(0deg) scale(1); }
-            50% { transform: rotateY(180deg) scale(1.2); }
-            100% { transform: rotateY(360deg) scale(1.2); }
-        }
-
-        ::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, var(--secondary), var(--tertiary));
-            border-radius: 10px;
-            border: 2px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, var(--tertiary), var(--secondary));
-            box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
-        }
-
-        ::-webkit-scrollbar-thumb:active {
-            background: var(--secondary);
-        }
-
-        * {
-            scrollbar-color: var(--secondary) var(--primary);
-            scrollbar-width: thin;
-        }
-
-        *::-webkit-scrollbar-thumb {
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--secondary) 0%, var(--tertiary) 50%, var(--secondary) 100%);
-            box-shadow: 0 0 8px rgba(14, 233, 81, 0.4), inset 0 0 6px rgba(0, 0, 0, 0.1);
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            box-shadow: 0 0 15px rgba(14, 233, 81, 0.6), 0 0 25px rgba(0, 218, 191, 0.4), inset 0 0 6px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" style="height: auto;">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <span class="fw-bold text-uppercase" style="font-size: 1.25rem">
-                    <img src="./assets/images/logo.png" alt="logo" style="width: 170px;">
-                </span>
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/images/logo.png" alt="logo" style="width: 170px;">
             </a>
 
-            <button
-                class="navbar-toggler p-0 border-0"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto navbar-nav-scroll" style="font-size: 1.1rem; font-weight: 500">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="service.html">Services</a>
@@ -852,15 +529,18 @@
             </div>
         </div>
     </nav>
-    <!-- end of navbar -->
 
-    <div class="header-section">
-        <div class="header-label">OUR CORE TESTING SERVICES</div>
-        <h1>Explore Our Specialized Laboratory Capabilities</h1>
-        <p class="header-description">Reliable Laboratory Testing Services W.L.L offers a wide range of analytical and monitoring solutions across sectors including water, environment, construction, petroleum, food, chemicals, and waste.</p>
+    <!-- Header -->
+    <div class="header-section" style="height: auto;">
+        <div class="container">
+            <div class="header-label">OUR CORE TESTING SERVICES</div>
+            <h1>Explore Our Specialized Laboratory Capabilities</h1>
+            <p class="header-description">Reliable Laboratory Testing Services W.L.L offers a wide range of analytical and monitoring solutions across sectors including water, environment, construction, petroleum, food, chemicals, and waste.</p>
+        </div>
     </div>
 
-    <div class="cards-container">
+    <!-- Service Cards -->
+    <div class="cards-container" style="height: auto;">
         <div class="service-card" onclick="scrollToSection('water')">
             <div class="card-icon">💧</div>
             <h3>Water & Wastewater Testing</h3>
@@ -897,7 +577,8 @@
         </div>
     </div>
 
-    <div class="content-section">
+    <!-- Service Details -->
+    <div class="content-section" style="height: auto;">
         <div class="service-detail" id="water">
             <div class="service-content">
                 <h2>Water & Wastewater Testing</h2>
@@ -922,7 +603,7 @@
             <div class="service-content">
                 <h2>Environmental Analysis</h2>
                 <p class="intro-text">We provide end-to-end environmental monitoring and analytical services designed to help industries, municipalities, and private entities assess their environmental impact and operational requirements.</p>
-                <p class="intro-text">Our laboratory specializes in the testing of air, soil, and water samples to determine contamination levels, pollutant sources, and compliance with local and international environmental regulations. Our reports support clients in meeting EPA, ISO, and Bahrain EPA standards, facilitating sustainable business operations and environmental stewardship.</p>
+                <p class="intro-text">Our laboratory specializes in the testing of air, soil, and water samples to determine contamination levels, pollutant sources, and compliance with local and international environmental regulations.</p>
                 
                 <h4>Key Tests Include:</h4>
                 <ul>
@@ -942,7 +623,7 @@
             <div class="service-content">
                 <h2>Construction Materials Testing</h2>
                 <p class="intro-text">Reliable Laboratory Testing Services W.L.L ensures that construction materials meet the Local and International standards.</p>
-                <p class="intro-text">We conduct precise laboratory and field testing on soil, concrete, aggregates, steel, cement, Fly ash, Micro silica and asphalt as per ASTM, BS, GSO and AASHTO standards, providing reliable data to construction companies and related regulatory bodies.</p>
+                <p class="intro-text">We conduct precise laboratory and field testing on soil, concrete, aggregates, steel, cement, Fly ash, Micro silica and asphalt as per ASTM, BS, GSO and AASHTO standards.</p>
                 
                 <h4>Testing Capabilities:</h4>
                 <ul>
@@ -962,7 +643,6 @@
             <div class="service-content">
                 <h2>Petroleum Products Testing</h2>
                 <p class="intro-text">Reliable Laboratory Testing Services W.L.L provides physical and chemical testing for fuels, lubricants, and petroleum derivatives to assess product performance, contamination, and compliance with ASTM and API standards.</p>
-                <p class="intro-text">We support refineries, distributors, Transport companies, Shipping companies, and industrial consumers in quality assurance and regulatory conformity.</p>
                 
                 <h4>Testing Capabilities:</h4>
                 <ul>
@@ -983,7 +663,7 @@
             <div class="service-content">
                 <h2>Food & Agricultural Products Testing</h2>
                 <p class="intro-text">We offer comprehensive microbiological and chemical testing to ensure food safety from production to distribution.</p>
-                <p class="intro-text">Our food laboratory is equipped to detect contaminants, adulterants, and pathogens while validating nutritional labels and shelf-life claims. All tests are conducted in accordance with BAM, ISO and GSO standards, and Bahrain Ministry of Health regulations.</p>
+                <p class="intro-text">All tests are conducted in accordance with BAM, ISO and GSO standards, and Bahrain Ministry of Health regulations.</p>
                 
                 <h4>Testing Scope:</h4>
                 <ul>
@@ -1023,7 +703,6 @@
             <div class="service-content">
                 <h2>Solid & Liquid Waste Testing</h2>
                 <p class="intro-text">Our waste testing services help industries identify, characterize, and manage hazardous and non-hazardous waste safely and responsibly.</p>
-                <p class="intro-text">Through detailed analysis, we provide treatment recommendations, classification reports, and ensure compliance with environmental regulations and disposal guidelines.</p>
                 
                 <h4>Key Services:</h4>
                 <ul>
@@ -1040,87 +719,44 @@
         </div>
     </div>
 
-    <section class="footer text-light bg-dark">
+    <!-- Footer -->
+    <section class="footer" style="height: auto;">
         <div class="container">
-            <div class="row" data-aos="fade-right">
-                <!-- Company Info -->
+            <div class="row">
                 <div class="col-lg-4 col-md-6 py-4 py-md-5">
-                    <div class="d-flex align-items-center">
-                        <h4 class="fw-bold">Reliable Laboratory Testing Services W.L.L</h4>
-                    </div>
-                    <p class="py-3 para-light">
-                        We are an ISO/IEC 17025 accredited independent testing laboratory based in the Kingdom of Bahrain, providing accurate and high-quality analytical services in water, environment, food, petroleum, construction materials, and industrial chemicals.
-                    </p>
-                    <div class="d-flex">
-                        <a href="https://www.facebook.com" target="_blank" class="me-3 text-light">
-                            <i class="fab fa-facebook-f fa-2x py-2"></i>
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank" class="me-3 text-light">
-                            <i class="fab fa-linkedin fa-2x py-2"></i>
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" class="text-light">
-                            <i class="fab fa-instagram fa-2x py-2"></i>
-                        </a>
+                    <h4>Reliable Laboratory Testing Services W.L.L</h4>
+                    <p class="py-3">We are an ISO/IEC 17025 accredited independent testing laboratory based in the Kingdom of Bahrain, providing accurate and high-quality analytical services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <!-- end of col -->
-
-                <!-- Quick Links -->
                 <div class="col-lg-4 col-md-6 py-4 py-md-5">
-                    <div>
-                        <h4 class="py-2 fw-bold">Quick Links</h4>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
-                            <a href="index.html#about" class="ms-3 text-light text-decoration-none">About Us</a>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
-                            <a href="#services" class="ms-3 text-light text-decoration-none">Our Services</a>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
-                            <a href="index.html#contact" class="ms-3 text-light text-decoration-none">Contact Us</a>
-                        </div>
-                    </div>
+                    <h4>Quick Links</h4>
+                    <a href="index.html"><i class="fas fa-caret-right me-2"></i>Home</a><br>
+                    <a href="about.html"><i class="fas fa-caret-right me-2"></i>About Us</a><br>
+                    <a href="service.html"><i class="fas fa-caret-right me-2"></i>Services</a><br>
+                    <a href="index.html#contact"><i class="fas fa-caret-right me-2"></i>Contact</a>
                 </div>
-                <!-- end of col -->
-
-                <!-- Contact Info -->
                 <div class="col-lg-4 col-md-12 py-4 py-md-5">
-                    <div>
-                        <h4 class="py-2 fw-bold">Contact Info</h4>
-                        <div class="d-flex align-items-start py-2">
-                            <i class="fas fa-map-marker-alt mt-1"></i>
-                            <p class="ms-3 mb-0">Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-phone-alt"></i>
-                            <p class="ms-3 mb-0">+973 1778 4500</p>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-envelope"></i>
-                            <p class="ms-3 mb-0">info@reliablelab.bh</p>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="far fa-clock"></i>
-                            <p class="ms-3 mb-0">Sun – Thu: 08:00 AM – 05:00 PM</p>
-                        </div>
-                    </div>
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
+                    <p><i class="fas fa-phone-alt me-2"></i>+973 1778 4500</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@reliablelab.bh</p>
                 </div>
-                <!-- end of col -->
             </div>
-            <!-- end of row -->
         </div>
-        <!-- end of container -->
     </section>
 
-    <!-- Bottom -->
-    <div class="bottom py-3 text-light bg-secondary">
-        <div class="container text-center">
+    <div class="bottom" style="height: auto;">
+        <div class="container">
             <p class="mb-0">© 2025 Reliable Laboratory Testing Services W.L.L. All Rights Reserved.</p>
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
@@ -1139,7 +775,7 @@
             }
         });
 
-        // Close mobile menu when clicking on a link
+        // Mobile menu close
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth < 992) {
@@ -1151,13 +787,25 @@
                 }
             });
         });
-    </script>
 
-    <!-- Scripts -->
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/purecounter.min.js"></script>
-    <script src="./js/swiper.min.js"></script>
-    <script src="./js/aos.js"></script>
-    <script src="./js/script.js"></script>
+        // Reveal service details on scroll
+        const serviceDetails = document.querySelectorAll('.service-detail');
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, revealOptions);
+
+        serviceDetails.forEach(detail => {
+            revealOnScroll.observe(detail);
+        });
+    </script>
 </body>
 </html>
