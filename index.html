@@ -15,295 +15,710 @@
     <link rel="icon" href="./assets/images/fav-icon.png" />
 
     <style>
-        /* Enhanced animations */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        /* Color Theme Variables */
+:root {
+    --primary-dark: #1c262f;
+    --primary-light: #212d37;
+    --secondary: #0ee951;
+    --tertiary: #00dabf;
+    --gradient: linear-gradient(to right, #0ee951, #00dabf);
+}
 
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(14, 233, 81, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 20px rgba(14, 233, 81, 0);
-            }
-        }
+/* White Navbar */
+.navbar {
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
 
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+.navbar.scrolled {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
 
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+.navbar-toggler {
+    border: none;
+    padding: 5px 10px;
+    background: transparent;
+}
 
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+.navbar-toggler:focus {
+    box-shadow: none;
+}
 
-        /* Home section enhancements */
-        .home {
-            position: relative;
-            overflow: hidden;
-        }
+.navbar-toggler-icon {
+    width: 25px;
+    height: 2px;
+    background: var(--primary-dark);
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
 
-        .home::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(28, 38, 47, 0.8), rgba(33, 45, 55, 0.7));
-            z-index: 1;
-        }
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    width: 25px;
+    height: 2px;
+    background: var(--primary-dark);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
 
-        .home .container {
-            position: relative;
-            z-index: 2;
-        }
+.navbar-toggler-icon::before { 
+    top: -8px; 
+}
 
-        .home h1 {
-            animation: slideInFromLeft 1s ease-out;
-        }
+.navbar-toggler-icon::after { 
+    top: 8px; 
+}
 
-        .home .para {
-            animation: slideInFromLeft 1.2s ease-out;
-        }
+.nav-link {
+    color: var(--primary-dark) !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+    font-size: 1rem;
+}
 
-        .home .btn {
-            animation: fadeInScale 1.4s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
 
-        .home .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
+.nav-link:hover,
+.nav-link.active {
+    color: var(--secondary) !important;
+}
 
-        .home .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
 
-        /* Enhanced service cards */
-        .service-card {
-            position: relative;
-            overflow: hidden;
-        }
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #f9fafb;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .nav-link::after { 
+        display: none; 
+    }
+}
 
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(
-                transparent,
-                rgba(14, 233, 81, 0.3),
-                transparent 30%
-            );
-            animation: rotate 4s linear infinite;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+/* Section Backgrounds */
+.section-dark {
+    background: var(--primary-dark);
+    color: white;
+}
 
-        .service-link:hover .service-card::after {
-            opacity: 1;
-        }
+.section-white {
+    background: #ffffff;
+    color: #333;
+}
 
-        @keyframes rotate {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+.section-white h1,
+.section-white h2,
+.section-white h3,
+.section-white h4,
+.section-white h5,
+.section-white h6 {
+    color: var(--primary-dark);
+}
 
-        /* Parallax effect for sections */
-        .parallax-section {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
+.section-white p {
+    color: #4b5563;
+}
 
-        /* Reveal on scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
+.section-white .para-light {
+    color: #6b7280;
+}
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+/* Enhanced Home Section */
+.home {
+    background-image: linear-gradient(135deg, rgba(28, 38, 47, 0.85), rgba(0, 218, 191, 0.2)), 
+                      url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    margin-top: 76px;
+}
 
-        /* Stagger animation delays */
-        .service-card:nth-child(1) { transition-delay: 0.1s; }
-        .service-card:nth-child(2) { transition-delay: 0.2s; }
-        .service-card:nth-child(3) { transition-delay: 0.3s; }
-        .service-card:nth-child(4) { transition-delay: 0.4s; }
-        .service-card:nth-child(5) { transition-delay: 0.5s; }
-        .service-card:nth-child(6) { transition-delay: 0.6s; }
-        .service-card:nth-child(7) { transition-delay: 0.7s; }
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(14, 233, 81, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 218, 191, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
 
-        /* Testimonial enhancements */
-        .testimonial-card {
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
+.home .container {
+    position: relative;
+    z-index: 2;
+}
 
-        .testimonial-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(14, 233, 81, 0.3);
-        }
+.home-content {
+    max-width: 900px;
+}
 
-        /* Equal height testimonial cards */
-        .testimonial-card.equal-card {
-            min-height: 380px;
-            height: 380px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+/* Enhanced Typography */
+.home .headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
 
-        .testimonial-card.equal-card p:first-child {
-            flex: 1;
-            margin-bottom: 1rem;
-            overflow-y: auto;
-        }
+.home .para {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-weight: 400;
+    opacity: 0.95;
+    max-width: 750px;
+    letter-spacing: 0.3px;
+}
 
-        .swiper-slide {
-            height: auto;
-            display: flex;
-        }
+/* Gradient Text Animation */
+.gradient-text {
+    background: linear-gradient(90deg, #0ee951, #00dabf, #0ee951, #00dabf);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 4s ease infinite;
+    display: inline-block;
+}
 
-        /* Enhanced button hover */
-        .btn:hover {
-            animation: pulse 1.5s infinite;
-        }
+@keyframes gradientFlow {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
 
-        /* Counter animation */
-        .counter {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
+/* Typewriter Effect */
+.typewriter {
+    display: inline-block;
+    border-right: 3px solid #0ee951;
+    animation: blink 0.7s step-end infinite;
+}
 
-        /* Gradient text animation */
-        .gradient-text {
-            background: linear-gradient(90deg, #0ee951, #00dabf, #0ee951);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 3s ease infinite;
-        }
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
 
-        /* Wave animation for sections */
-        .wave-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
+/* Fade In Up Animations */
+.animate-fadeInUp {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease forwards;
+}
 
-        .wave-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
-        }
+.animate-fadeInUp.delay-1 {
+    animation-delay: 0.3s;
+}
 
-        /* Loading animation for images */
-        .image-loader {
-            position: relative;
-            overflow: hidden;
-        }
+.animate-fadeInUp.delay-2 {
+    animation-delay: 0.6s;
+}
 
-        .image-loader::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(14, 233, 81, 0.3), transparent);
-            animation: loading 1.5s infinite;
-        }
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        @keyframes loading {
-            100% {
-                left: 100%;
-            }
-        }
+/* Enhanced Buttons */
+.btn-home {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    background: var(--gradient);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0;
+}
 
-        /* Floating animation for icons */
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
+.btn-home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
 
-        .service-card i {
-            animation: floating 3s ease-in-out infinite;
-        }
+.btn-home:hover::before {
+    left: 100%;
+}
 
-        .service-card:nth-child(odd) i {
-            animation-delay: 0.5s;
-        }
+.btn-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(14, 233, 81, 0.4);
+    color: white;
+}
 
-        /* Glow effect on hover */
-        .glow-on-hover {
-            transition: all 0.3s ease;
-        }
+.btn-home-outline {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0;
+}
 
-        .glow-on-hover:hover {
-            box-shadow: 0 0 30px rgba(14, 233, 81, 0.6),
-                        0 0 60px rgba(0, 218, 191, 0.4),
-                        inset 0 0 20px rgba(14, 233, 81, 0.2);
-        }
+.btn-home-outline:hover {
+    background: white;
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* White Section Buttons */
+.section-white .btn-primary {
+    background: var(--gradient);
+    border: none;
+    color: white;
+}
+
+.section-white .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(14, 233, 81, 0.4);
+}
+
+/* Decorative Shapes */
+.home-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #0ee951, transparent);
+    top: 10%;
+    right: 5%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #00dabf, transparent);
+    bottom: 10%;
+    left: 10%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #0ee951, transparent);
+    top: 50%;
+    left: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1);
+    }
+}
+
+/* Floating particles effect */
+.home::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent);
+    background-size: 200% 200%;
+    animation: particles 20s linear infinite;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes particles {
+    0% {
+        background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    }
+}
+
+
+
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(14, 233, 81, 0.2);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(14, 233, 81, 0.3);
+    border-color: var(--secondary);
+}
+
+/* Equal height testimonial cards */
+.testimonial-card.equal-card {
+    min-height: 380px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card.equal-card p:first-child {
+    flex: 1;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+/* Counter animation */
+.counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* Contact Section Form Styling */
+.section-white .form-control {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    color: #333;
+}
+
+.section-white .form-control:focus {
+    background: white;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 0.2rem rgba(14, 233, 81, 0.25);
+}
+
+.section-white .form-control::placeholder {
+    color: #9ca3af;
+}
+
+/* Glow effect on hover */
+.glow-on-hover {
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 30px rgba(14, 233, 81, 0.6),
+                0 0 60px rgba(0, 218, 191, 0.4);
+}
+
+/* Checkmark styling for white sections */
+.section-white .text-info {
+    color: var(--secondary) !important;
+}
+
+/* Parallax effect for sections */
+.parallax-section {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+/* Enhanced service cards */
+     .service-card {
+        position: relative;
+        padding: 1.8rem 1.3rem;
+        border: 1px solid rgba(0, 198, 255, 0.2);
+        border-radius: 12px;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        cursor: pointer;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 198, 255, 0.15),
+          rgba(138, 43, 226, 0.15)
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 0;
+      }
+
+      .service-card::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 198, 255, 0.1) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 0;
+      }
+
+      .service-card:hover::before {
+        opacity: 1;
+      }
+
+      .service-card:hover::after {
+        opacity: 1;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: rgba(0, 198, 255, 0.6);
+        box-shadow: 0 15px 40px rgba(0, 198, 255, 0.25),
+          0 5px 15px rgba(138, 43, 226, 0.2),
+          inset 0 0 20px rgba(0, 198, 255, 0.1);
+      }
+
+      .service-card i {
+        color: #00d4ff;
+        margin-bottom: 0.8rem;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        z-index: 1;
+        filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+        max-height: 100px;
+        opacity: 1;
+      }
+
+      .service-card h4 {
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        position: relative;
+        z-index: 1;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .service-card p {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+        font-size: 0.9rem;
+        position: relative;
+        z-index: 1;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        margin: 0;
+      }
+
+      .service-card:hover p {
+        max-height: 200px;
+        opacity: 1;
+        margin-top: 0.5rem;
+      }
+
+      .service-card:hover i {
+        transform: scale(1.15) translateY(-5px);
+        filter: drop-shadow(0 0 15px rgba(14, 233, 81, 0.6));
+        max-height: 100px;
+        opacity: 1;
+      }
+
+      .service-card:hover h4 {
+        color: rgba(255, 255, 255, 0.85);
+        text-shadow: 0 0 20px rgba(14, 233, 81, 0.6);
+      }
+/* Responsive Design */
+@media (max-width: 992px) {
+    .home .headline {
+        font-size: 3rem;
+    }
+    
+    .home .para {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .btn-home,
+    .btn-home-outline {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    /* .service-card {
+        min-height: 280px;
+    } */
+}
+
+@media (max-width: 768px) {
+    .home .headline {
+        font-size: 2.5rem;
+    }
+    
+    .home .para {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .btn-home-outline {
+        margin-top: 1rem;
+        margin-left: 0 !important;
+    }
+    
+    .shape {
+        display: none;
+    }
+
+    /* .service-card {
+        min-height: 260px;
+    } */
+}
+
+@media (max-width: 576px) {
+    .home .headline {
+        font-size: 2rem;
+    }
+    
+    .home .para {
+        font-size: 0.95rem;
+    }
+    
+    .btn-home,
+    .btn-home-outline {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    /* .service-card {
+        min-height: 240px;
+        padding: 25px 15px;
+    } */
+}
+
+        
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--primary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          to bottom,
+          var(--secondary),
+          var(--tertiary)
+        );
+        border-radius: 10px;
+        border: 2px solid var(--primary);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
+      }
+
+      
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" style="height: auto;">
+    <!-- White Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="./assets/images/logo.png" alt="logo" style="width: 170px;">
@@ -332,32 +747,47 @@
         </div>
     </nav>
 
-    <!-- Home -->
-    <section class="home py-5 d-flex align-items-center parallax-section" id="header" style="height: auto;">
+    <!-- Home Section - DARK -->
+    <section class="home py-5 d-flex align-items-center section-dark parallax-section" id="header">
         <div class="container text-light py-5">
-            <h1 class="headline">
-                Bahrain's<span class="home_text gradient-text"> Trusted Lab</span><br />
-                for Quality & Compliance.
-            </h1>
-            <p class="para para-light py-3">
-                Reliable Laboratory Testing Services W.L.L. is a state-of-the-art
-                independent laboratory based in The Kingdom of Bahrain. We deliver
-                accurate, high-quality analytical services to support informed
-                decisions across a broad spectrum of industries, including Water &
-                Wastewater, Environmental, Construction, Food, and Petroleum Products.
-            </p>
-            <div class="my-3">
-                <a class="btn glow-on-hover" href="#contact">Contact Us</a>
+            <div class="home-content">
+                <h1 class="headline animate-fadeInUp">
+                    Bahrain's<span class="home_text gradient-text"> Trusted Lab</span><br />
+                    <span >for Quality & Compliance.</span>
+                </h1>
+                <p class="para para-light py-4 animate-fadeInUp delay-1">
+                    Reliable Laboratory Testing Services W.L.L. is a state-of-the-art
+                    independent laboratory based in The Kingdom of Bahrain. We deliver
+                    accurate, high-quality analytical services to support informed
+                    decisions across a broad spectrum of industries, including Water &
+                    Wastewater, Environmental, Construction, Food, and Petroleum Products.
+                </p>
+                <div class="my-4 animate-fadeInUp delay-2">
+                    <a class="btn btn-home glow-on-hover" href="#contact">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a class="btn btn-home-outline ms-3" href="service.html">
+                        <span>Our Services</span>
+                    </a>
+                </div>
             </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="home-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
     </section>
 
-    <!-- About -->
-    <section class="about d-flex align-items-center text-light py-5 reveal" id="about" style="height: auto;">
+    <!-- About Section - WHITE -->
+    <section class="about d-flex align-items-center section-white py-5 reveal" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-4 mb-lg-0" data-aos="fade-right">
-                    <p class="text-uppercase mb-2">ABOUT US</p>
+                    <p class="text-uppercase mb-2" style="color: var(--secondary); font-weight: 600;">ABOUT US</p>
                     <h1 class="fw-bold mb-3">
                         Reliable Laboratory <br />
                         Testing Services W.L.L.
@@ -398,134 +828,135 @@
                     <a href="about.html" class="btn btn-primary px-4 glow-on-hover">Learn More</a>
                 </div>
 
-                <div class="col-lg-5 text-center image-loader" data-aos="fade-left">
+                <div class="col-lg-5 text-center" data-aos="fade-left">
                     <img src="assets/images/about.jpg" alt="About Reliable Lab" class="img-fluid rounded shadow-lg" />
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Section - DARK with Simple Clean Cards -->
     <!-- Services -->
-    <section class="services py-5 reveal" id="services" style="height: auto;">
-        <div class="container text-light">
-            <div class="text-center pb-4">
-                <p>OUR CORE TESTING SERVICES</p>
-                <h2 class="py-2">Explore Our Specialized Laboratory Capabilities</h2>
-                <p class="para-light">
-                    Reliable Laboratory Testing Services W.L.L offers a wide range of
-                    analytical and monitoring solutions across sectors including water,
-                    environment, construction, petroleum, food, chemicals, and waste.
-                </p>
-            </div>
-
-            <div class="row gy-4 py-2 justify-content-center" data-aos="zoom-in">
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#water" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-tint fa-2x"></i>
-                            <h4 class="py-2">Water & Wastewater Testing</h4>
-                            <p class="para-light">
-                                Comprehensive testing of drinking, process, and wastewater to
-                                ensure compliance with APHA, EPA, WHO, and ISO standards.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#environmental" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-leaf fa-2x"></i>
-                            <h4 class="py-2">Environmental Analysis</h4>
-                            <p class="para-light">
-                                Air, soil, and water quality assessments to identify
-                                contaminants and support EPA, ISO, and Bahrain EPA compliance.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#construction" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-hard-hat fa-2x"></i>
-                            <h4 class="py-2">Construction Materials Testing</h4>
-                            <p class="para-light">
-                                Testing of soil, concrete, cement, aggregates, steel, and
-                                asphalt as per ASTM, BS, GSO, and AASHTO standards.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#petroleum" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-gas-pump fa-2x"></i>
-                            <h4 class="py-2">Petroleum Products Testing</h4>
-                            <p class="para-light">
-                                Physical and chemical analysis of fuels, lubricants, and
-                                petroleum derivatives to meet ASTM and API standards.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#food" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-apple-alt fa-2x"></i>
-                            <h4 class="py-2">Food & Agricultural Products Testing</h4>
-                            <p class="para-light">
-                                Microbiological and chemical testing for food safety,
-                                nutritional analysis, and fertilizer quality control.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#chemicals" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-vials fa-2x"></i>
-                            <h4 class="py-2">Industrial Chemicals Testing</h4>
-                            <p class="para-light">
-                                Compositional and impurity analysis of industrial chemicals
-                                ensuring quality, purity, and process reliability.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 reveal">
-                    <a href="service.html#waste" class="service-link text-decoration-none">
-                        <div class="card bg-transparent h-100 text-center service-card glow-on-hover">
-                            <i class="fas fa-recycle fa-2x"></i>
-                            <h4 class="py-2">Solid & Liquid Waste Testing</h4>
-                            <p class="para-light">
-                                Detailed analysis and classification of hazardous and
-                                non-hazardous waste for safe disposal and regulatory
-                                compliance.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+    <section class="services py-5" id="services" style="height: auto">
+      <div class="container text-light">
+        <div class="text-center pb-4">
+          <p>OUR CORE TESTING SERVICES</p>
+          <h2 class="py-2">Explore Our Specialized Laboratory Capabilities</h2>
+          <p class="para-light">
+            Reliable Laboratory Testing Services W.L.L offers a wide range of
+            analytical and monitoring solutions across sectors including water,
+            environment, construction, petroleum, food, chemicals, and waste.
+          </p>
         </div>
+
+        <div class="row gy-4 py-2 justify-content-center">
+          <div class="col-lg-3 col-md-6">
+            <a href="service.html#water" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-tint fa-2x"></i>
+                <h4>Water & Wastewater Testing</h4>
+                <p class="para-light">
+                  Comprehensive testing of drinking, process, and wastewater to
+                  ensure compliance with APHA, EPA, WHO, and ISO standards.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <a href="service.html#environmental" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-leaf fa-2x"></i>
+                <h4>Environmental Analysis</h4>
+                <p class="para-light">
+                  Air, soil, and water quality assessments to identify
+                  contaminants and support EPA, ISO, and Bahrain EPA compliance.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <a href="service.html#construction" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-hard-hat fa-2x"></i>
+                <h4>Construction Materials Testing</h4>
+                <p class="para-light">
+                  Testing of soil, concrete, cement, aggregates, steel, and
+                  asphalt as per ASTM, BS, GSO, and AASHTO standards.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <a href="service.html#petroleum" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-gas-pump fa-2x"></i>
+                <h4>Petroleum Products Testing</h4>
+                <p class="para-light">
+                  Physical and chemical analysis of fuels, lubricants, and
+                  petroleum derivatives to meet ASTM and API standards.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 offset-lg-1-5">
+            <a href="service.html#food" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-apple-alt fa-2x"></i>
+                <h4>Food & Agricultural Products Testing</h4>
+                <p class="para-light">
+                  Microbiological and chemical testing for food safety,
+                  nutritional analysis, and fertilizer quality control.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <a href="service.html#chemicals" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-vials fa-2x"></i>
+                <h4>Industrial Chemicals Testing</h4>
+                <p class="para-light">
+                  Compositional and impurity analysis of industrial chemicals
+                  ensuring quality, purity, and process reliability.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <a href="service.html#waste" class="service-link">
+              <div class="card bg-transparent h-100 text-center service-card">
+                <i class="fas fa-recycle fa-2x"></i>
+                <h4>Solid & Liquid Waste Testing</h4>
+                <p class="para-light">
+                  Detailed analysis and classification of hazardous and
+                  non-hazardous waste for safe disposal and regulatory
+                  compliance.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Work -->
-    <section class="plans d-flex align-items-center py-5 reveal" id="plans" style="height: auto;">
-        <div class="container-fluid text-light">
+    <!-- Work Section - WHITE -->
+    <section class="plans section-white d-flex align-items-center py-5 reveal" id="plans">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 d-flex align-items-center image-loader" data-aos="fade-right">
-                    <img class="img-fluid" src="./assets/images/work.jpg" alt="Reliable Laboratory Testing" />
+                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right">
+                    <img class="img-fluid rounded shadow" src="./assets/images/work.jpg" alt="Reliable Laboratory Testing" />
                 </div>
 
                 <div class="col-lg-5 d-flex align-items-center px-4 py-3">
                     <div class="row">
                         <div class="text-center text-lg-start py-4 pt-lg-0">
-                            <p>OUR WORK</p>
+                            <p style="color: var(--secondary); font-weight: 600; text-transform: uppercase;">OUR WORK</p>
                             <h2 class="py-2">Ensuring Quality Through Precision Testing</h2>
                             <p class="para-light">
                                 Reliable Laboratory Testing Services W.L.L is an ISO/IEC
@@ -540,27 +971,27 @@
                         <div class="container" data-aos="fade-up">
                             <div class="row g-5">
                                 <div class="col-6 text-start">
-                                    <i class="fas fa-briefcase fa-2x text-start"></i>
+                                    <i class="fas fa-briefcase fa-2x text-start" style="color: var(--secondary);"></i>
                                     <h2 class="counter purecounter" data-target="1200">0</h2>
-                                    <p>PROJECTS COMPLETED</p>
+                                    <p style="color: #6b7280; font-weight: 600;">PROJECTS COMPLETED</p>
                                 </div>
 
                                 <div class="col-6">
-                                    <i class="fas fa-award fa-2x"></i>
+                                    <i class="fas fa-award fa-2x" style="color: var(--secondary);"></i>
                                     <h2 class="counter purecounter" data-target="25">0</h2>
-                                    <p>QUALITY CERTIFICATIONS</p>
+                                    <p style="color: #6b7280; font-weight: 600;">QUALITY CERTIFICATIONS</p>
                                 </div>
 
                                 <div class="col-6">
-                                    <i class="fas fa-users fa-2x"></i>
+                                    <i class="fas fa-users fa-2x" style="color: var(--secondary);"></i>
                                     <h2 class="counter purecounter" data-target="950">0</h2>
-                                    <p>CLIENTS SERVED</p>
+                                    <p style="color: #6b7280; font-weight: 600;">CLIENTS SERVED</p>
                                 </div>
 
                                 <div class="col-6">
-                                    <i class="fas fa-flask fa-2x"></i>
+                                    <i class="fas fa-flask fa-2x" style="color: var(--secondary);"></i>
                                     <h2 class="counter purecounter" data-target="7000">0</h2>
-                                    <p>LAB TESTS CONDUCTED</p>
+                                    <p style="color: #6b7280; font-weight: 600;">LAB TESTS CONDUCTED</p>
                                 </div>
                             </div>
                         </div>
@@ -570,12 +1001,12 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <div class="slider-1 testimonial text-light d-flex align-items-center reveal" style="height: auto;">
+    <!-- Testimonials Section - DARK -->
+    <div class="slider-1 testimonial section-dark text-light d-flex align-items-center reveal">
         <div class="container">
             <div class="row">
                 <div class="text-center w-lg-75 m-auto pb-4">
-                    <p>TESTIMONIALS</p>
+                    <p style="color: var(--secondary); font-weight: 600; text-transform: uppercase;">TESTIMONIALS</p>
                     <h2 class="py-2">What Our Clients Say About Us</h2>
                     <p class="para-light">
                         Our clients across industries trust Reliable Laboratory Testing
@@ -680,14 +1111,14 @@
         </div>
     </div>
 
-    <!-- Contact -->
-    <section class="newsletter text-light py-5 reveal" id="contact" style="height: auto;">
-        <div class="container-fluid text-light">
+    <!-- Contact Section - WHITE -->
+    <section class="newsletter section-white py-5 reveal" id="contact">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center px-lg-5" data-aos="fade-right">
                     <div style="width: 90%">
                         <div class="text-center text-lg-start py-4 pt-lg-0">
-                            <p>GET IN TOUCH</p>
+                            <p style="color: var(--secondary); font-weight: 600; text-transform: uppercase;">GET IN TOUCH</p>
                             <h2 class="py-2">We'd Love to Hear From You</h2>
                             <p class="para-light">
                                 Have a question or want to collaborate? Fill out the form
@@ -715,44 +1146,44 @@
                             </div>
                         </div>
                         <div class="my-3">
-                            <a class="btn form-control-submit-button glow-on-hover" href="#your-link">Send Message</a>
+                            <a class="btn btn-primary w-100 glow-on-hover" href="#your-link">Send Message</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-flex align-items-center image-loader" data-aos="fade-down">
-                    <img class="img-fluid d-none d-lg-block" src="./assets/images/contact.jpg" alt="contact illustration" style="border-radius: 5px; max-width: 90%; height: auto" />
+                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
+                    <img class="img-fluid d-none d-lg-block rounded shadow" src="./assets/images/contact.jpg" alt="contact illustration" style="max-width: 90%; height: auto" />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location -->
-    <section class="location text-light py-5 reveal" style="height: auto;">
+    <!-- Location Section - DARK -->
+    <section class="location section-dark text-light py-5 reveal">
         <div class="container" data-aos="zoom-in">
             <div class="row">
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-map fa-3x"></i></div>
+                <div class="col-lg-3 d-flex align-items-center mb-4 mb-lg-0">
+                    <div class="p-2"><i class="far fa-map fa-3x" style="color: var(--secondary);"></i></div>
                     <div class="ms-2">
                         <h6>ADDRESS</h6>
                         <p>Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
                     </div>
                 </div>
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="fas fa-mobile-alt fa-3x"></i></div>
+                <div class="col-lg-3 d-flex align-items-center mb-4 mb-lg-0">
+                    <div class="p-2"><i class="fas fa-mobile-alt fa-3x" style="color: var(--secondary);"></i></div>
                     <div class="ms-2">
                         <h6>CALL FOR QUERY</h6>
                         <p>+973 1778 4500</p>
                     </div>
                 </div>
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
+                <div class="col-lg-3 d-flex align-items-center mb-4 mb-lg-0">
+                    <div class="p-2"><i class="far fa-envelope fa-3x" style="color: var(--secondary);"></i></div>
                     <div class="ms-2">
                         <h6>SEND US MESSAGE</h6>
                         <p>info@reliablelab.bh</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-clock fa-3x"></i></div>
+                    <div class="p-2"><i class="far fa-clock fa-3x" style="color: var(--secondary);"></i></div>
                     <div class="ms-2">
                         <h6>OPENING HOURS</h6>
                         <p>Sunday - Thursday: 08:00 AM - 05:00 PM</p>
@@ -762,8 +1193,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <section class="footer text-light bg-dark" style="height: auto;">
+    <!-- Footer - DARK -->
+    <section class="footer text-light bg-dark">
         <div class="container">
             <div class="row" data-aos="fade-right">
                 <div class="col-lg-4 col-md-6 py-4 py-md-5">
@@ -792,15 +1223,15 @@
                     <div>
                         <h4 class="py-2 fw-bold">Quick Links</h4>
                         <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
+                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
                             <a href="about.html" class="ms-3 text-light text-decoration-none">About Us</a>
                         </div>
                         <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
+                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
                             <a href="service.html" class="ms-3 text-light text-decoration-none">Our Services</a>
                         </div>
                         <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
+                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
                             <a href="#contact" class="ms-3 text-light text-decoration-none">Contact Us</a>
                         </div>
                     </div>
@@ -810,19 +1241,19 @@
                     <div>
                         <h4 class="py-2 fw-bold">Contact Info</h4>
                         <div class="d-flex align-items-start py-2">
-                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <i class="fas fa-map-marker-alt mt-1" style="color: var(--secondary);"></i>
                             <p class="ms-3 mb-0">Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
                         </div>
                         <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone-alt" style="color: var(--secondary);"></i>
                             <p class="ms-3 mb-0">+973 1778 4500</p>
                         </div>
                         <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" style="color: var(--secondary);"></i>
                             <p class="ms-3 mb-0">info@reliablelab.bh</p>
                         </div>
                         <div class="d-flex align-items-center py-2">
-                            <i class="far fa-clock"></i>
+                            <i class="far fa-clock" style="color: var(--secondary);"></i>
                             <p class="ms-3 mb-0">Sun – Thu: 08:00 AM – 05:00 PM</p>
                         </div>
                     </div>
@@ -831,7 +1262,7 @@
         </div>
     </section>
 
-    <div class="bottom py-3 text-light bg-secondary" style="height: auto;">
+    <div class="bottom py-3 text-light" style="background: #000;">
         <div class="container text-center">
             <p class="mb-0">© 2025 Reliable Laboratory Testing Services W.L.L. All Rights Reserved.</p>
         </div>
@@ -921,8 +1352,9 @@
         AOS.init({
             duration: 1000,
             easing: 'ease',
-            // once: true,
+            once: false,
         });
+        
     </script>
 </body>
 </html>

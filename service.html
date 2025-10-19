@@ -9,6 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="./css/aos.min.css" rel="stylesheet" />
+    <link href="./css/swiper.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+        <link rel="icon" href="./assets/images/fav-icon.png" />
 
     <style>
         :root {
@@ -37,28 +44,39 @@
             overflow-x: hidden;
         }
 
-        /* Navbar */
+        /* WHITE Navbar */
         .navbar {
-            background: rgba(28, 38, 47, 0.95);
-            backdrop-filter: blur(10px);
+            background: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 1rem 0;
             transition: all 0.3s ease;
+            z-index: 1000;
         }
 
         .navbar.scrolled {
-            background: rgba(28, 38, 47, 1);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary) !important;
         }
 
         .navbar-toggler {
             border: none;
-            padding: 0;
+            padding: 5px 10px;
+            background: transparent;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
 
         .navbar-toggler-icon {
             width: 25px;
             height: 2px;
-            background: var(--secondary);
+            background: var(--primary);
             display: block;
             position: relative;
             transition: all 0.3s ease;
@@ -69,7 +87,7 @@
             content: '';
             width: 25px;
             height: 2px;
-            background: var(--secondary);
+            background: var(--primary);
             position: absolute;
             left: 0;
             transition: all 0.3s ease;
@@ -79,11 +97,12 @@
         .navbar-toggler-icon::after { top: 8px; }
 
         .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: var(--primary) !important;
             padding: 0.5rem 1rem !important;
             transition: all 0.3s ease;
             position: relative;
             font-weight: 500;
+            font-size: 1rem;
         }
 
         .nav-link::after {
@@ -110,25 +129,56 @@
 
         @media (max-width: 991px) {
             .navbar-collapse {
-                background: var(--primary-light);
+                background: #f9fafb;
                 margin-top: 1rem;
                 padding: 1rem;
                 border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             }
             .nav-link::after { display: none; }
         }
 
-        /* Header Section */
-        .header-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 180px 20px 100px;
-            text-align: center;
+        /* Hero Carousel - DARK */
+        .hero-carousel {
             position: relative;
+            margin-top: 76px;
             overflow: hidden;
+            background: var(--primary);
         }
 
-        .header-section::before {
+        .carousel {
+            height: 70vh;
+            min-height: 500px;
+        }
+
+        .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-item {
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(28, 38, 47, 0.9), rgba(33, 45, 55, 0.8));
+            z-index: 1;
+        }
+
+        .carousel-item::after {
             content: '';
             position: absolute;
             top: -50%;
@@ -137,18 +187,7 @@
             height: 600px;
             background: radial-gradient(circle, rgba(14, 233, 81, 0.15) 0%, transparent 70%);
             animation: float 8s ease-in-out infinite;
-        }
-
-        .header-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0, 218, 191, 0.15) 0%, transparent 70%);
-            animation: float 10s ease-in-out infinite;
-            animation-delay: 2s;
+            z-index: 1;
         }
 
         @keyframes float {
@@ -156,58 +195,135 @@
             50% { transform: translateY(-30px) rotate(180deg); }
         }
 
-        .header-section .container {
-            position: relative;
+        .carousel-caption-custom {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
             z-index: 2;
+            width: 90%;
+            max-width: 1000px;
         }
 
-        .header-label {
+        .carousel-caption-custom .label {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
             color: var(--secondary);
-            font-size: 14px;
             font-weight: 600;
-            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .header-section h1 {
-            font-size: 2.5em;
             margin-bottom: 20px;
-            font-weight: 700;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
+            opacity: 0;
         }
 
-        .header-description {
-            max-width: 800px;
+        .carousel-item.active .carousel-caption-custom .label {
+            animation: fadeInDown 0.8s ease-out 0.2s forwards;
+        }
+
+        .carousel-caption-custom h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+        }
+
+        .carousel-item.active .carousel-caption-custom h1 {
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+        }
+
+        .carousel-caption-custom p {
+            font-size: 1.2rem;
+            opacity: 0;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 900px;
             margin: 0 auto;
-            font-size: 1.1em;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .carousel-item.active .carousel-caption-custom p {
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Cards Container */
+        .carousel-indicators {
+            bottom: 30px;
+            z-index: 3;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            background-color: var(--secondary);
+            border-color: white;
+            transform: scale(1.3);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(14, 233, 81, 0.2);
+            border-radius: 50%;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .carousel-control-prev { left: 30px; }
+        .carousel-control-next { right: 30px; }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(14, 233, 81, 0.4);
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+
+        /* Cards Container - WHITE */
         .cards-container {
+            background: white;
             max-width: 1400px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
+            margin: -80px auto 60px;
+            padding: 40px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
             position: relative;
             z-index: 10;
+            border-radius: 12px;
         }
 
         .service-card {
@@ -229,23 +345,15 @@
         }
 
         @media (max-width: 1400px) {
-            .service-card {
-                width: calc(33.333% - 17px);
-            }
+            .service-card { width: calc(33.333% - 17px); }
         }
 
         @media (max-width: 1024px) {
-            .service-card {
-                width: calc(50% - 13px);
-            }
+            .service-card { width: calc(50% - 13px); }
         }
 
         @media (max-width: 650px) {
-            .service-card {
-                width: 100%;
-                max-width: 100%;
-                min-width: auto;
-            }
+            .service-card { width: 100%; max-width: 100%; min-width: auto; }
         }
 
         .service-card::before {
@@ -294,27 +402,59 @@
             color: var(--secondary);
         }
 
-        /* Content Section */
+        /* Content Section - Alternating DARK/WHITE */
         .content-section {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            padding: 0;
         }
 
         .service-detail {
             display: flex;
             gap: 40px;
             align-items: center;
-            margin-bottom: 100px;
+            margin: 0;
+            padding: 80px 20px;
             scroll-margin-top: 100px;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(50px);
             transition: all 0.8s ease;
         }
 
         .service-detail.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Alternating backgrounds */
+        .service-detail:nth-child(odd) {
+            background: var(--primary);
+            color: white;
+        }
+
+        .service-detail:nth-child(even) {
+            background: white;
+            color: #333;
+        }
+
+        .service-detail:nth-child(even) .service-content h2,
+        .service-detail:nth-child(even) .service-content h4 {
+            color: var(--primary);
+        }
+
+        .service-detail:nth-child(even) .service-content p,
+        .service-detail:nth-child(even) .service-content ul li {
+            color: #4b5563;
+        }
+
+        .service-detail:nth-child(odd) .service-content h2,
+        .service-detail:nth-child(odd) .service-content h4 {
+            color: white;
+        }
+
+        .service-detail:nth-child(odd) .service-content p,
+        .service-detail:nth-child(odd) .service-content ul li {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .service-detail:nth-child(even) {
@@ -326,7 +466,6 @@
         }
 
         .service-content h2 {
-            color: var(--primary);
             font-size: 2em;
             margin-bottom: 20px;
             position: relative;
@@ -345,13 +484,11 @@
         }
 
         .service-content .intro-text {
-            color: #4b5563;
             margin-bottom: 20px;
             line-height: 1.8;
         }
 
         .service-content h4 {
-            color: var(--primary-light);
             margin: 25px 0 15px;
             font-size: 1.2em;
         }
@@ -365,7 +502,6 @@
             padding-left: 30px;
             position: relative;
             margin-bottom: 12px;
-            color: #4b5563;
             line-height: 1.7;
         }
 
@@ -398,7 +534,7 @@
             box-shadow: 0 15px 40px rgba(14, 233, 81, 0.3);
         }
 
-        /* Footer */
+        /* Footer - DARK */
         .footer {
             background: var(--primary-light);
             color: #d0d0d0;
@@ -432,6 +568,11 @@
             transform: translateY(-5px);
         }
 
+        .footer p {
+            color: #bfbfbf;
+            line-height: 1.8;
+        }
+
         .bottom {
             background: black;
             color: #bfbfbf;
@@ -439,35 +580,10 @@
             text-align: center;
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--primary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, var(--secondary), var(--tertiary));
-            border-radius: 10px;
-            border: 2px solid var(--primary);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
-        }
-
-        /* Animations */
+        /* Card Stagger Animation */
         @keyframes cardStagger {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .service-card:nth-child(1) { animation: cardStagger 0.6s ease-out 0.1s backwards; }
@@ -489,19 +605,74 @@
                 max-width: 100%;
             }
 
-            .header-section h1 {
-                font-size: 2em;
-            }
-
             .service-image img {
                 height: 300px;
             }
+
+            .carousel {
+                height: 50vh;
+                min-height: 400px;
+            }
+
+            .carousel-caption-custom h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-caption-custom p {
+                font-size: 1rem;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 45px;
+                height: 45px;
+            }
+
+            .carousel-control-prev { left: 15px; }
+            .carousel-control-next { right: 15px; }
+
+            .cards-container {
+                margin-top: -50px;
+            }
         }
+
+        @media (max-width: 576px) {
+            .carousel-caption-custom h1 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-caption-custom p {
+                font-size: 0.9rem;
+            }
+        }
+              /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--primary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          to bottom,
+          var(--secondary),
+          var(--tertiary)
+        );
+        border-radius: 10px;
+        border: 2px solid var(--primary);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
+      }
+
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" style="height: auto;">
+    <!-- WHITE Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="./assets/images/logo.png" alt="logo" style="width: 170px;">
@@ -530,17 +701,55 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <div class="header-section" style="height: auto;">
-        <div class="container">
-            <div class="header-label">OUR CORE TESTING SERVICES</div>
-            <h1>Explore Our Specialized Laboratory Capabilities</h1>
-            <p class="header-description">Reliable Laboratory Testing Services W.L.L offers a wide range of analytical and monitoring solutions across sectors including water, environment, construction, petroleum, food, chemicals, and waste.</p>
-        </div>
-    </div>
+    <!-- Hero Carousel - DARK -->
+    <section class="hero-carousel">
+        <div id="servicesCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
 
-    <!-- Service Cards -->
-    <div class="cards-container" style="height: auto;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=800&fit=crop" class="d-block w-100" alt="Laboratory Services">
+                    <div class="carousel-caption-custom">
+                        <div class="label">OUR CORE TESTING SERVICES</div>
+                        <h1>Explore Our Specialized Laboratory Capabilities</h1>
+                        <p>Reliable Laboratory Testing Services W.L.L offers a wide range of analytical and monitoring solutions across sectors including water, environment, construction, petroleum, food, chemicals, and waste.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1920&h=800&fit=crop" class="d-block w-100" alt="Quality Testing">
+                    <div class="carousel-caption-custom">
+                        <div class="label">COMPREHENSIVE ANALYSIS</div>
+                        <h1>Precise Testing for Every Industry</h1>
+                        <p>From water quality to construction materials, our state-of-the-art laboratory provides accurate results that meet international standards and regulatory requirements.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1920&h=800&fit=crop" class="d-block w-100" alt="Advanced Equipment">
+                    <div class="carousel-caption-custom">
+                        <div class="label">CERTIFIED EXCELLENCE</div>
+                        <h1>ISO/IEC 17025 Accredited Services</h1>
+                        <p>Operating with internationally recognized quality management standards, ensuring technical competence and reliable results for all our testing services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Service Cards - WHITE -->
+    <div class="cards-container">
         <div class="service-card" onclick="scrollToSection('water')">
             <div class="card-icon">💧</div>
             <h3>Water & Wastewater Testing</h3>
@@ -577,8 +786,8 @@
         </div>
     </div>
 
-    <!-- Service Details -->
-    <div class="content-section" style="height: auto;">
+    <!-- Service Details - Alternating DARK/WHITE -->
+    <div class="content-section">
         <div class="service-detail" id="water">
             <div class="service-content">
                 <h2>Water & Wastewater Testing</h2>
@@ -595,7 +804,7 @@
                 </ul>
             </div>
             <div class="service-image">
-                <img src="assets/images/waterService.jpg" alt="Water Testing">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=600&fit=crop" alt="Water Testing">
             </div>
         </div>
 
@@ -719,37 +928,76 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <section class="footer" style="height: auto;">
+            <!-- Footer - DARK -->
+    <section class="footer text-light bg-dark">
         <div class="container">
-            <div class="row">
+            <div class="row" data-aos="fade-right">
                 <div class="col-lg-4 col-md-6 py-4 py-md-5">
-                    <h4>Reliable Laboratory Testing Services W.L.L</h4>
-                    <p class="py-3">We are an ISO/IEC 17025 accredited independent testing laboratory based in the Kingdom of Bahrain, providing accurate and high-quality analytical services.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="d-flex align-items-center">
+                        <h4 class="fw-bold">Reliable Laboratory Testing Services W.L.L</h4>
+                    </div>
+                    <p class="py-3 para-light">
+                        We are an ISO/IEC 17025 accredited independent testing laboratory
+                        based in the Kingdom of Bahrain, providing accurate and
+                        high-quality analytical services.
+                    </p>
+                    <div class="d-flex">
+                        <a href="#" class="me-3 text-light">
+                            <i class="fab fa-facebook-f fa-2x py-2"></i>
+                        </a>
+                        <a href="#" class="me-3 text-light">
+                            <i class="fab fa-linkedin fa-2x py-2"></i>
+                        </a>
+                        <a href="#" class="text-light">
+                            <i class="fab fa-instagram fa-2x py-2"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 py-4 py-md-5">
-                    <h4>Quick Links</h4>
-                    <a href="index.html"><i class="fas fa-caret-right me-2"></i>Home</a><br>
-                    <a href="about.html"><i class="fas fa-caret-right me-2"></i>About Us</a><br>
-                    <a href="service.html"><i class="fas fa-caret-right me-2"></i>Services</a><br>
-                    <a href="index.html#contact"><i class="fas fa-caret-right me-2"></i>Contact</a>
+                    <div>
+                        <h4 class="py-2 fw-bold">Quick Links</h4>
+                        <div class="d-flex align-items-center py-2">
+                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
+                            <a href="about.html" class="ms-3 text-light text-decoration-none">About Us</a>
+                        </div>
+                        <div class="d-flex align-items-center py-2">
+                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
+                            <a href="service.html" class="ms-3 text-light text-decoration-none">Our Services</a>
+                        </div>
+                        <div class="d-flex align-items-center py-2">
+                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
+                            <a href="#contact" class="ms-3 text-light text-decoration-none">Contact Us</a>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="col-lg-4 col-md-12 py-4 py-md-5">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
-                    <p><i class="fas fa-phone-alt me-2"></i>+973 1778 4500</p>
-                    <p><i class="fas fa-envelope me-2"></i>info@reliablelab.bh</p>
+                    <div>
+                        <h4 class="py-2 fw-bold">Contact Info</h4>
+                        <div class="d-flex align-items-start py-2">
+                            <i class="fas fa-map-marker-alt mt-1" style="color: var(--secondary);"></i>
+                            <p class="ms-3 mb-0">Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
+                        </div>
+                        <div class="d-flex align-items-center py-2">
+                            <i class="fas fa-phone-alt" style="color: var(--secondary);"></i>
+                            <p class="ms-3 mb-0">+973 1778 4500</p>
+                        </div>
+                        <div class="d-flex align-items-center py-2">
+                            <i class="fas fa-envelope" style="color: var(--secondary);"></i>
+                            <p class="ms-3 mb-0">info@reliablelab.bh</p>
+                        </div>
+                        <div class="d-flex align-items-center py-2">
+                            <i class="far fa-clock" style="color: var(--secondary);"></i>
+                            <p class="ms-3 mb-0">Sun – Thu: 08:00 AM – 05:00 PM</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="bottom" style="height: auto;">
+    <div class="bottom">
         <div class="container">
             <p class="mb-0">© 2025 Reliable Laboratory Testing Services W.L.L. All Rights Reserved.</p>
         </div>
@@ -757,7 +1005,22 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Scripts -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/purecounter.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/script.js"></script>
     <script>
+        // Initialize Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = new bootstrap.Carousel(document.getElementById('servicesCarousel'), {
+                interval: 5000,
+                pause: 'hover',
+                wrap: true
+            });
+        });
+
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
