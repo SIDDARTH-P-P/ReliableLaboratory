@@ -850,9 +850,107 @@
       .service-item:nth-child(4) {
         transition-delay: 0.4s;
       }
+
+            .whatsapp-float img {
+  width: 35px !important;
+  height: 35px;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.whatsapp-float {
+  position: fixed;
+  /* width: 50px;
+  height: 50px; */
+  bottom: 30px;
+  right: 50px;
+  background-color: #25d366 !important;
+  color: #fff;
+  border-radius: 50% !important;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: phonePulse 2s infinite;
+}
+
+.phone-float {
+  position: fixed;
+  /* width: 50px;
+  height: 50px; */
+  bottom: 110px; /* keep it above WhatsApp */
+  right: 50px;
+  background-color: var(--accent-orange); /* Blue */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow:var(--accent-orange);
+  animation: phonePulse 2s infinite;
+}
+
+.phone-float img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Hover effect */
+.phone-float:hover {
+  transform: scale(1.1);
+  transition: 0.8s;
+}
+
+.avatar {
+  width: 20vw; /* adjusts with viewport width */
+  max-width: 130px; /* cap the size on large screens */
+  aspect-ratio: 1 / 1; /* keeps perfect circle */
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+    .bottom p {
+      flex: 1 1 50% !important;
+      text-align: left !important;
+    }
+    
+    .bottom a {
+      flex: 1 1 50% !important;
+      text-align: right !important;
+    }
+  }
     </style>
   </head>
   <body>
+
+        <a
+      href="https://wa.me/+97339338686"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+        alt="WhatsApp"
+      />
+    </a>
+
+          <a href="tel:+97336767535" class="phone-float" aria-label="Call Now">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+          alt="Phone"
+        />
+      </a>
+
     <!-- WHITE Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
@@ -1327,20 +1425,38 @@
       </div>
     </section>
 
-    <div class="bottom py-3 text-light" style="background: #000">
-      <div class="container text-center">
-        <a
-          href="https://asmbahrain.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-light text-decoration-none"
-        >
-          <p class="mb-0">
-            © 2025 A&S Management Consultancy All Rights Reserved.
-          </p>
-        </a>
-      </div>
-    </div>
+   <div class="bottom py-3 text-light" style="background: #000">
+  <div
+    class="container"
+    style="
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+    "
+  >
+    <p style="margin: 0; flex: 1 1 100%; text-align: center;">
+      © 2025 Reliable Laboratory Testing Services W.L.L All Rights Reserved.
+    </p>
+<a
+    
+      href="https://asmbahrain.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="
+        text-decoration: none;
+        color: #fff;
+        flex: 1 1 100%;
+        text-align: center;
+        font-size: 13px;
+      "
+    >
+      Developed By A&S Management.
+  </div>
+</div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
