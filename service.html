@@ -1,651 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Explore our comprehensive laboratory testing services" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Explore our comprehensive laboratory testing services"
+    />
     <title>Services - Reliable Laboratory</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
     <link href="./css/fontawesome-all.min.css" rel="stylesheet" />
     <link href="./css/aos.min.css" rel="stylesheet" />
     <link href="./css/swiper.css" rel="stylesheet" />
     <link href="./css/style.css" rel="stylesheet" />
-        <link rel="icon" href="./assets/images/fav-icon.png" />
+    <link rel="icon" href="./assets/images/fav-icon.png" />
 
     <style>
-        :root {
-            --primary: #1c262f;
-            --primary-light: #212d37;
-            --secondary: #0ee951;
-            --tertiary: #00dabf;
-            --gradient: linear-gradient(to right, #0ee951, #00dabf);
+      :root {
+        --primary: #1c262f;
+        --primary-light: #212d37;
+        --secondary: #0ee951;
+        --tertiary: #00dabf;
+        --gradient: linear-gradient(to right, #0ee951, #00dabf);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+      }
+
+      /* WHITE Navbar */
+      .navbar {
+        background: #ffffff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .navbar.scrolled {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: var(--primary) !important;
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 5px 10px;
+        background: transparent;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        width: 25px;
+        height: 2px;
+        background: var(--primary);
+        display: block;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before,
+      .navbar-toggler-icon::after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background: var(--primary);
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before {
+        top: -8px;
+      }
+      .navbar-toggler-icon::after {
+        top: 8px;
+      }
+
+      .nav-link {
+        color: var(--primary) !important;
+        padding: 0.5rem 1rem !important;
+        transition: all 0.3s ease;
+        position: relative;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--secondary) !important;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 80%;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-collapse {
+          background: #f9fafb;
+          margin-top: 1rem;
+          padding: 1rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            overflow-x: hidden;
-        }
-
-        /* WHITE Navbar */
-        .navbar {
-            background: #ffffff !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .navbar.scrolled {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .navbar-brand {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary) !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 5px 10px;
-            background: transparent;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 25px;
-            height: 2px;
-            background: var(--primary);
-            display: block;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before,
-        .navbar-toggler-icon::after {
-            content: '';
-            width: 25px;
-            height: 2px;
-            background: var(--primary);
-            position: absolute;
-            left: 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before { top: -8px; }
-        .navbar-toggler-icon::after { top: 8px; }
-
-        .nav-link {
-            color: var(--primary) !important;
-            padding: 0.5rem 1rem !important;
-            transition: all 0.3s ease;
-            position: relative;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+          display: none;
+        }
+      }
+
+      /* Hero Carousel - DARK */
+      .hero-carousel {
+        position: relative;
+        margin-top: 76px;
+        overflow: hidden;
+        background: var(--primary);
+      }
+
+      .carousel {
+        height: 70vh;
+        min-height: 500px;
+      }
+
+      .carousel-inner {
+        height: 100%;
+      }
+
+      .carousel-item {
+        height: 100%;
+        position: relative;
+      }
+
+      .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.4);
+      }
+
+      .carousel-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(28, 38, 47, 0.9),
+          rgba(33, 45, 55, 0.8)
+        );
+        z-index: 1;
+      }
+
+      .carousel-item::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(14, 233, 81, 0.15) 0%,
+          transparent 70%
+        );
+        animation: float 8s ease-in-out infinite;
+        z-index: 1;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-30px) rotate(180deg);
+        }
+      }
+
+      .carousel-caption-custom {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+        width: 90%;
+        max-width: 1000px;
+      }
+
+      .carousel-caption-custom .label {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        color: var(--secondary);
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        opacity: 0;
+      }
+
+      .carousel-item.active .carousel-caption-custom .label {
+        animation: fadeInDown 0.8s ease-out 0.2s forwards;
+      }
+
+      .carousel-caption-custom h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+      }
+
+      .carousel-item.active .carousel-caption-custom h1 {
+        animation: fadeInUp 1s ease-out 0.4s forwards;
+      }
+
+      .carousel-caption-custom p {
+        font-size: 1.2rem;
+        opacity: 0;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.95);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .carousel-item.active .carousel-caption-custom p {
+        animation: fadeInUp 1s ease-out 0.6s forwards;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .carousel-indicators {
+        bottom: 30px;
+        z-index: 3;
+      }
+
+      .carousel-indicators [data-bs-target] {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-indicators .active {
+        background-color: var(--secondary);
+        border-color: white;
+        transform: scale(1.3);
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(14, 233, 81, 0.2);
+        border-radius: 50%;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+        z-index: 3;
+      }
+
+      .carousel-control-prev {
+        left: 30px;
+      }
+      .carousel-control-next {
+        right: 30px;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        background: rgba(14, 233, 81, 0.4);
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .carousel-fade .carousel-item {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .carousel-fade .carousel-item.active {
+        opacity: 1;
+      }
+
+      /* Cards Container - WHITE */
+      .cards-container {
+        background: white;
+        max-width: 1400px;
+        margin: -80px auto 60px;
+        padding: 40px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        position: relative;
+        z-index: 10;
+        border-radius: 12px;
+      }
+
+      .service-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 20px 30px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        overflow: hidden;
+        width: calc(25% - 19px);
+        min-width: 280px;
+        max-width: 320px;
+      }
+
+      @media (max-width: 1400px) {
+        .service-card {
+          width: calc(33.333% - 17px);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .service-card {
+          width: calc(50% - 13px);
+        }
+      }
+
+      @media (max-width: 650px) {
+        .service-card {
+          width: 100%;
+          max-width: 100%;
+          min-width: auto;
+        }
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient);
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+
+      .service-card:hover::before {
+        left: 0;
+        opacity: 0.05;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: var(--secondary);
+        box-shadow: 0 15px 35px rgba(14, 233, 81, 0.3);
+      }
+
+      .card-icon {
+        font-size: 32px;
+        flex-shrink: 0;
+        transition: all 0.4s ease;
+      }
+
+      .service-card:hover .card-icon {
+        transform: rotateY(360deg) scale(1.2);
+      }
+
+      .service-card h3 {
+        font-size: 1.05em;
+        color: var(--primary);
+        font-weight: 600;
+        text-align: left;
+        margin: 0;
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover h3 {
+        color: var(--secondary);
+      }
+
+      /* Content Section - Alternating DARK/WHITE */
+      .content-section {
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .service-detail {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin: 0;
+        padding: 80px 20px;
+        scroll-margin-top: 100px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .service-detail.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Alternating backgrounds */
+      .service-detail:nth-child(odd) {
+        background: var(--primary);
+        color: white;
+      }
+
+      .service-detail:nth-child(even) {
+        background: white;
+        color: #333;
+      }
+
+      .service-detail:nth-child(even) .service-content h2,
+      .service-detail:nth-child(even) .service-content h4 {
+        color: var(--primary);
+      }
+
+      .service-detail:nth-child(even) .service-content p,
+      .service-detail:nth-child(even) .service-content ul li {
+        color: #4b5563;
+      }
+
+      .service-detail:nth-child(odd) .service-content h2,
+      .service-detail:nth-child(odd) .service-content h4 {
+        color: white;
+      }
+
+      .service-detail:nth-child(odd) .service-content p,
+      .service-detail:nth-child(odd) .service-content ul li {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .service-detail:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .service-content {
+        flex: 1;
+      }
+
+      .service-content h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .service-content h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+
+      .service-content .intro-text {
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      .service-content h4 {
+        margin: 25px 0 15px;
+        font-size: 1.2em;
+      }
+
+      .service-content ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .service-content ul li {
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 12px;
+        line-height: 1.7;
+      }
+
+      .service-content ul li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      .service-image {
+        flex: 1;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease;
+      }
+
+      .service-image:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(14, 233, 81, 0.3);
+      }
+
+      /* Footer - DARK */
+      .footer {
+        background: var(--primary-light);
+        color: #d0d0d0;
+        padding: 60px 0 30px;
+      }
+
+      .footer h4 {
+        color: white;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .footer a {
+        color: #d0d0d0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .footer a:hover {
+        color: var(--secondary);
+        transform: translateX(5px);
+      }
+
+      .footer .social-links a {
+        margin-right: 15px;
+        font-size: 1.5rem;
+      }
+
+      .footer .social-links a:hover {
+        transform: translateY(-5px);
+      }
+
+      .footer p {
+        color: #bfbfbf;
+        line-height: 1.8;
+      }
+
+      .bottom {
+        background: black;
+        color: #bfbfbf;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      /* Card Stagger Animation */
+      @keyframes cardStagger {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .service-card:nth-child(1) {
+        animation: cardStagger 0.6s ease-out 0.1s backwards;
+      }
+      .service-card:nth-child(2) {
+        animation: cardStagger 0.6s ease-out 0.2s backwards;
+      }
+      .service-card:nth-child(3) {
+        animation: cardStagger 0.6s ease-out 0.3s backwards;
+      }
+      .service-card:nth-child(4) {
+        animation: cardStagger 0.6s ease-out 0.4s backwards;
+      }
+      .service-card:nth-child(5) {
+        animation: cardStagger 0.6s ease-out 0.5s backwards;
+      }
+      .service-card:nth-child(6) {
+        animation: cardStagger 0.6s ease-out 0.6s backwards;
+      }
+      .service-card:nth-child(7) {
+        animation: cardStagger 0.6s ease-out 0.7s backwards;
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .service-detail,
+        .service-detail:nth-child(even) {
+          flex-direction: column;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--secondary) !important;
+        .service-image {
+          max-width: 100%;
         }
 
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 80%;
-        }
-
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background: #f9fafb;
-                margin-top: 1rem;
-                padding: 1rem;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            }
-            .nav-link::after { display: none; }
-        }
-
-        /* Hero Carousel - DARK */
-        .hero-carousel {
-            position: relative;
-            margin-top: 76px;
-            overflow: hidden;
-            background: var(--primary);
+        .service-image img {
+          height: 300px;
         }
 
         .carousel {
-            height: 70vh;
-            min-height: 500px;
-        }
-
-        .carousel-inner {
-            height: 100%;
-        }
-
-        .carousel-item {
-            height: 100%;
-            position: relative;
-        }
-
-        .carousel-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            filter: brightness(0.4);
-        }
-
-        .carousel-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(28, 38, 47, 0.9), rgba(33, 45, 55, 0.8));
-            z-index: 1;
-        }
-
-        .carousel-item::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(14, 233, 81, 0.15) 0%, transparent 70%);
-            animation: float 8s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
-        }
-
-        .carousel-caption-custom {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 2;
-            width: 90%;
-            max-width: 1000px;
-        }
-
-        .carousel-caption-custom .label {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: var(--secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            opacity: 0;
-        }
-
-        .carousel-item.active .carousel-caption-custom .label {
-            animation: fadeInDown 0.8s ease-out 0.2s forwards;
+          height: 50vh;
+          min-height: 400px;
         }
 
         .carousel-caption-custom h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-        }
-
-        .carousel-item.active .carousel-caption-custom h1 {
-            animation: fadeInUp 1s ease-out 0.4s forwards;
+          font-size: 2rem;
         }
 
         .carousel-caption-custom p {
-            font-size: 1.2rem;
-            opacity: 0;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.95);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .carousel-item.active .carousel-caption-custom p {
-            animation: fadeInUp 1s ease-out 0.6s forwards;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .carousel-indicators {
-            bottom: 30px;
-            z-index: 3;
-        }
-
-        .carousel-indicators [data-bs-target] {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-indicators .active {
-            background-color: var(--secondary);
-            border-color: white;
-            transform: scale(1.3);
+          font-size: 1rem;
         }
 
         .carousel-control-prev,
         .carousel-control-next {
-            width: 60px;
-            height: 60px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(14, 233, 81, 0.2);
-            border-radius: 50%;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-            z-index: 3;
+          width: 45px;
+          height: 45px;
         }
 
-        .carousel-control-prev { left: 30px; }
-        .carousel-control-next { right: 30px; }
-
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            background: rgba(14, 233, 81, 0.4);
-            opacity: 1;
-            transform: translateY(-50%) scale(1.1);
+        .carousel-control-prev {
+          left: 15px;
+        }
+        .carousel-control-next {
+          right: 15px;
         }
 
-        .carousel-fade .carousel-item {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel-fade .carousel-item.active {
-            opacity: 1;
-        }
-
-        /* Cards Container - WHITE */
         .cards-container {
-            background: white;
-            max-width: 1400px;
-            margin: -80px auto 60px;
-            padding: 40px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            position: relative;
-            z-index: 10;
-            border-radius: 12px;
+          margin-top: -50px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .carousel-caption-custom h1 {
+          font-size: 1.5rem;
         }
 
-        .service-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 20px 30px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            position: relative;
-            overflow: hidden;
-            width: calc(25% - 19px);
-            min-width: 280px;
-            max-width: 320px;
+        .carousel-caption-custom p {
+          font-size: 0.9rem;
         }
-
-        @media (max-width: 1400px) {
-            .service-card { width: calc(33.333% - 17px); }
-        }
-
-        @media (max-width: 1024px) {
-            .service-card { width: calc(50% - 13px); }
-        }
-
-        @media (max-width: 650px) {
-            .service-card { width: 100%; max-width: 100%; min-width: auto; }
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            left: 0;
-            opacity: 0.05;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--secondary);
-            box-shadow: 0 15px 35px rgba(14, 233, 81, 0.3);
-        }
-
-        .card-icon {
-            font-size: 32px;
-            flex-shrink: 0;
-            transition: all 0.4s ease;
-        }
-
-        .service-card:hover .card-icon {
-            transform: rotateY(360deg) scale(1.2);
-        }
-
-        .service-card h3 {
-            font-size: 1.05em;
-            color: var(--primary);
-            font-weight: 600;
-            text-align: left;
-            margin: 0;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover h3 {
-            color: var(--secondary);
-        }
-
-        /* Content Section - Alternating DARK/WHITE */
-        .content-section {
-            /* max-width: 1200px; */
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .service-detail {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            margin: 0;
-            padding: 80px 20px;
-            scroll-margin-top: 100px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .service-detail.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Alternating backgrounds */
-        .service-detail:nth-child(odd) {
-            background: var(--primary);
-            color: white;
-        }
-
-        .service-detail:nth-child(even) {
-            background: white;
-            color: #333;
-        }
-
-        .service-detail:nth-child(even) .service-content h2,
-        .service-detail:nth-child(even) .service-content h4 {
-            color: var(--primary);
-        }
-
-        .service-detail:nth-child(even) .service-content p,
-        .service-detail:nth-child(even) .service-content ul li {
-            color: #4b5563;
-        }
-
-        .service-detail:nth-child(odd) .service-content h2,
-        .service-detail:nth-child(odd) .service-content h4 {
-            color: white;
-        }
-
-        .service-detail:nth-child(odd) .service-content p,
-        .service-detail:nth-child(odd) .service-content ul li {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .service-detail:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .service-content {
-            flex: 1;
-        }
-
-        .service-content h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .service-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-
-        .service-content .intro-text {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .service-content h4 {
-            margin: 25px 0 15px;
-            font-size: 1.2em;
-        }
-
-        .service-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-content ul li {
-            padding-left: 30px;
-            position: relative;
-            margin-bottom: 12px;
-            line-height: 1.7;
-        }
-
-        .service-content ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .service-image {
-            flex: 1;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.5s ease;
-        }
-
-        .service-image:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(14, 233, 81, 0.3);
-        }
-
-        /* Footer - DARK */
-        .footer {
-            background: var(--primary-light);
-            color: #d0d0d0;
-            padding: 60px 0 30px;
-        }
-
-        .footer h4 {
-            color: white;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .footer a {
-            color: #d0d0d0;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .footer a:hover {
-            color: var(--secondary);
-            transform: translateX(5px);
-        }
-
-        .footer .social-links a {
-            margin-right: 15px;
-            font-size: 1.5rem;
-        }
-
-        .footer .social-links a:hover {
-            transform: translateY(-5px);
-        }
-
-        .footer p {
-            color: #bfbfbf;
-            line-height: 1.8;
-        }
-
-        .bottom {
-            background: black;
-            color: #bfbfbf;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        /* Card Stagger Animation */
-        @keyframes cardStagger {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .service-card:nth-child(1) { animation: cardStagger 0.6s ease-out 0.1s backwards; }
-        .service-card:nth-child(2) { animation: cardStagger 0.6s ease-out 0.2s backwards; }
-        .service-card:nth-child(3) { animation: cardStagger 0.6s ease-out 0.3s backwards; }
-        .service-card:nth-child(4) { animation: cardStagger 0.6s ease-out 0.4s backwards; }
-        .service-card:nth-child(5) { animation: cardStagger 0.6s ease-out 0.5s backwards; }
-        .service-card:nth-child(6) { animation: cardStagger 0.6s ease-out 0.6s backwards; }
-        .service-card:nth-child(7) { animation: cardStagger 0.6s ease-out 0.7s backwards; }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .service-detail,
-            .service-detail:nth-child(even) {
-                flex-direction: column;
-            }
-
-            .service-image {
-                max-width: 100%;
-            }
-
-            .service-image img {
-                height: 300px;
-            }
-
-            .carousel {
-                height: 50vh;
-                min-height: 400px;
-            }
-
-            .carousel-caption-custom h1 {
-                font-size: 2rem;
-            }
-
-            .carousel-caption-custom p {
-                font-size: 1rem;
-            }
-
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 45px;
-                height: 45px;
-            }
-
-            .carousel-control-prev { left: 15px; }
-            .carousel-control-next { right: 15px; }
-
-            .cards-container {
-                margin-top: -50px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .carousel-caption-custom h1 {
-                font-size: 1.5rem;
-            }
-
-            .carousel-caption-custom p {
-                font-size: 0.9rem;
-            }
-        }
-              /* Scrollbar */
+      }
+      /* Scrollbar */
       ::-webkit-scrollbar {
         width: 12px;
       }
@@ -667,408 +752,636 @@
       ::-webkit-scrollbar-thumb:hover {
         box-shadow: 0 0 10px rgba(14, 233, 81, 0.5);
       }
-
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- WHITE Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="./assets/images/logo.png" alt="logo" style="width: 170px;">
-            </a>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/logo.png" alt="logo" style="width: 170px" />
+        </a>
 
-            <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button
+          class="navbar-toggler p-0 border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="service.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Carousel - DARK -->
     <section class="hero-carousel">
-        <div id="servicesCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets\images\aboutC1.jpeg?w=1920&h=800&fit=crop" class="d-block w-100" alt="Laboratory Services">
-                    <div class="carousel-caption-custom">
-                        <div class="label">OUR CORE TESTING SERVICES</div>
-                        <h1>Explore Our Specialized Laboratory Capabilities</h1>
-                        <p>Reliable Laboratory Testing Services W.L.L offers a wide range of analytical and monitoring solutions across sectors including water, environment, construction, petroleum, food, chemicals, and waste.</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="assets\images\aboutC2.jpeg?w=1920&h=800&fit=crop" class="d-block w-100" alt="Quality Testing">
-                    <div class="carousel-caption-custom">
-                        <div class="label">COMPREHENSIVE ANALYSIS</div>
-                        <h1>Precise Testing for Every Industry</h1>
-                        <p>From water quality to construction materials, our state-of-the-art laboratory provides accurate results that meet international standards and regulatory requirements.</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="assets\images\aboutC3.jpeg?w=1920&h=800&fit=crop" class="d-block w-100" alt="Advanced Equipment">
-                    <div class="carousel-caption-custom">
-                        <div class="label">CERTIFIED EXCELLENCE</div>
-                        <h1>ISO/IEC 17025 Accredited Services</h1>
-                        <p>Operating with internationally recognized quality management standards, ensuring technical competence and reliable results for all our testing services.</p>
-                    </div>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+      <div
+        id="servicesCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#servicesCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#servicesCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#servicesCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="assets\images\aboutC1.jpeg?w=1920&h=800&fit=crop"
+              class="d-block w-100"
+              alt="Laboratory Services"
+            />
+            <div class="carousel-caption-custom">
+              <div class="label">OUR CORE TESTING SERVICES</div>
+              <h1>Explore Our Specialized Laboratory Capabilities</h1>
+              <p>
+                Reliable Laboratory Testing Services W.L.L offers a wide range
+                of analytical and monitoring solutions across sectors including
+                water, environment, construction, petroleum, chemicals, and
+                waste.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="assets\images\aboutC2.jpeg?w=1920&h=800&fit=crop"
+              class="d-block w-100"
+              alt="Quality Testing"
+            />
+            <div class="carousel-caption-custom">
+              <div class="label">COMPREHENSIVE ANALYSIS</div>
+              <h1>Precise Testing for Every Industry</h1>
+              <p>
+                From water quality to construction materials, our
+                state-of-the-art laboratory provides accurate results that meet
+                international standards and regulatory requirements.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="assets\images\aboutC3.jpeg?w=1920&h=800&fit=crop"
+              class="d-block w-100"
+              alt="Advanced Equipment"
+            />
+            <div class="carousel-caption-custom">
+              <div class="label">CERTIFIED EXCELLENCE</div>
+              <h1>ISO/IEC 17025 Accredited Services</h1>
+              <p>
+                Operating with internationally recognized quality management
+                standards, ensuring technical competence and reliable results
+                for all our testing services.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#servicesCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#servicesCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
     </section>
 
     <!-- Service Cards - WHITE -->
     <div class="cards-container">
-        <div class="service-card" onclick="scrollToSection('water')">
-            <div class="card-icon">💧</div>
-            <h3>Water & Wastewater Testing</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('water')">
+        <div class="card-icon">💧</div>
+        <h3>Water & Wastewater Testing</h3>
+      </div>
 
-        <div class="service-card" onclick="scrollToSection('environmental')">
-            <div class="card-icon">🌿</div>
-            <h3>Environmental Analysis</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('environmental')">
+        <div class="card-icon">🌿</div>
+        <h3>Environmental Analysis</h3>
+      </div>
 
-        <div class="service-card" onclick="scrollToSection('construction')">
-            <div class="card-icon">🏗️</div>
-            <h3>Construction Materials Testing</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('construction')">
+        <div class="card-icon">🏗️</div>
+        <h3>Construction Materials Testing</h3>
+      </div>
 
-        <div class="service-card" onclick="scrollToSection('petroleum')">
-            <div class="card-icon">⛽</div>
-            <h3>Petroleum Products Testing</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('petroleum')">
+        <div class="card-icon">⛽</div>
+        <h3>Petroleum Products Testing</h3>
+      </div>
 
-        <div class="service-card" onclick="scrollToSection('food')">
-            <div class="card-icon">🍎</div>
-            <h3>Food & Agricultural Products Testing</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('food')">
+        <div class="card-icon">🍎</div>
+        <h3>Food & Agricultural Products Testing</h3>
+      </div>
 
-        <div class="service-card" onclick="scrollToSection('chemicals')">
-            <div class="card-icon">🧪</div>
-            <h3>Industrial Chemicals Testing</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('chemicals')">
+        <div class="card-icon">🧪</div>
+        <h3>Industrial Chemicals Testing</h3>
+      </div>
 
-        <div class="service-card" onclick="scrollToSection('waste')">
-            <div class="card-icon">♻️</div>
-            <h3>Solid & Liquid Waste Testing</h3>
-        </div>
+      <div class="service-card" onclick="scrollToSection('waste')">
+        <div class="card-icon">♻️</div>
+        <h3>Solid & Liquid Waste Testing</h3>
+      </div>
     </div>
 
     <!-- Service Details - Alternating DARK/WHITE -->
     <div class="content-section">
-        <div class="service-detail" id="water">
-            <div class="service-content">
-                <h2>Water & Wastewater Testing</h2>
-                <p class="intro-text">Our water testing facility provides comprehensive analysis of potable, process, and wastewater to ensure compliance with process industries, local and international health and environmental standards.</p>
-                <p class="intro-text">All analyses are performed as per APHA, EPA, WHO and ISO standard methods, with a focus on safety, sustainability, and regulatory adherence.</p>
-                
-                <h4>Services Include:</h4>
-                <ul>
-                    <li>Drinking water quality testing (Physical, Chemical & Microbiological)</li>
-                    <li>Industrial Raw water & Treated Effluents testing</li>
-                    <li>Wastewater treatment plant monitoring</li>
-                    <li>Desalination and process water analysis (Boiler water, Cooling water etc.)</li>
-                    <li>Ground water analysis</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets\images\aboutS1.jpeg?w=800&h=600&fit=crop" alt="Water Testing">
-            </div>
-        </div>
+      <div class="service-detail" id="water">
+        <div class="service-content">
+          <h2>Water & Wastewater Testing</h2>
+          <p class="intro-text">
+            Our water testing facility provides comprehensive analysis of
+            potable, process, and wastewater to ensure compliance with process
+            industries, local and international health and environmental
+            standards.
+          </p>
+          <p class="intro-text">
+            All analyses are performed as per APHA, EPA, WHO and ISO standard
+            methods, with a focus on safety, sustainability, and regulatory
+            adherence.
+          </p>
 
-        <div class="service-detail" id="environmental">
-            <div class="service-content">
-                <h2>Environmental Analysis</h2>
-                <p class="intro-text">We provide end-to-end environmental monitoring and analytical services designed to help industries, municipalities, and private entities assess their environmental impact and operational requirements.</p>
-                <p class="intro-text">Our laboratory specializes in the testing of air, soil, and water samples to determine contamination levels, pollutant sources, and compliance with local and international environmental regulations.</p>
-                
-                <h4>Key Tests Include:</h4>
-                <ul>
-                    <li>Air quality monitoring (Ambient and Indoor)</li>
-                    <li>Soil contamination analysis and heavy metal detection</li>
-                    <li>Groundwater and surface water quality & contamination assessment</li>
-                    <li>Gas Emissions and effluent testing for industries</li>
-                    <li>Solid wastes, Sludge, Waste oil Analysis</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets\images\ServiceC2.jpeg?w=800&h=600&fit=crop" alt="Environmental Testing">
-            </div>
+          <h4>Services Include:</h4>
+          <ul>
+            <li>Drinking water quality testing</li>
+            <li>Industrial Raw water & Treated Effluents testing</li>
+            <li>Wastewater treatment plant monitoring</li>
+            <li>
+              Desalination and process water analysis (Boiler water, Cooling
+              water etc.)
+            </li>
+            <!-- <li>Ground water analysis</li> -->
+          </ul>
         </div>
+        <div class="service-image">
+          <img
+            src="assets\images\aboutS1.jpeg?w=800&h=600&fit=crop"
+            alt="Water Testing"
+          />
+        </div>
+      </div>
 
-        <div class="service-detail" id="construction">
-            <div class="service-content">
-                <h2>Construction Materials Testing</h2>
-                <p class="intro-text">Reliable Laboratory Testing Services W.L.L ensures that construction materials meet the Local and International standards.</p>
-                <p class="intro-text">We conduct precise laboratory and field testing on soil, concrete, aggregates, steel, cement, Fly ash, Micro silica and asphalt as per ASTM, BS, GSO and AASHTO standards.</p>
-                
-                <h4>Testing Capabilities:</h4>
-                <ul>
-                    <li>Chemical analysis of Soil, Concrete, Aggregate, Cement, Fly ash, Micro Silica and Bitumen</li>
-                    <li>Soil classification and compaction testing</li>
-                    <li>Concrete strength and durability assessment</li>
-                    <li>Aggregate gradation and quality testing</li>
-                    <li>Steel reinforcement testing</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets\images\ServiceC3.jpeg?w=800&h=600&fit=crop" alt="Construction Testing">
-            </div>
-        </div>
+      <div class="service-detail" id="environmental">
+        <div class="service-content">
+          <h2>Environmental Analysis</h2>
+          <p class="intro-text">
+            We provide end-to-end environmental monitoring and analytical
+            services designed to help industries, municipalities, and private
+            entities assess their environmental impact and operational
+            requirements.
+          </p>
+          <p class="intro-text">
+            Our laboratory specializes in the testing of air, soil, and water
+            samples to determine contamination levels, pollutant sources, and
+            compliance with local and international environmental regulations.
+          </p>
 
-        <div class="service-detail" id="petroleum">
-            <div class="service-content">
-                <h2>Petroleum Products Testing</h2>
-                <p class="intro-text">Reliable Laboratory Testing Services W.L.L provides physical and chemical testing for fuels, lubricants, and petroleum derivatives to assess product performance, contamination, and compliance with ASTM and API standards.</p>
-                
-                <h4>Testing Capabilities:</h4>
-                <ul>
-                    <li>Flash point, viscosity, and density determination</li>
-                    <li>Sulfur and carbon residue content</li>
-                    <li>Distillation range and water content analysis</li>
-                    <li>Lubricant degradation and oxidation testing</li>
-                    <li>Elemental Analysis</li>
-                    <li>Total Acid number and Base Number</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets/images//oils-petroleum-products-testing-banner.webp" alt="Petroleum Testing">
-            </div>
+          <h4>Key Tests Include:</h4>
+          <ul>
+            <li>Air quality monitoring (Ambient and Indoor)</li>
+            <li>Soil contamination analysis and heavy metal detection</li>
+            <li>
+              Groundwater and surface water quality & contamination assessment
+            </li>
+            <li>Gas Emissions and effluent testing for industries</li>
+            <li>Solid wastes, Sludge, Waste oil Analysis</li>
+          </ul>
         </div>
+        <div class="service-image">
+          <img
+            src="assets\images\ServiceC2.jpeg?w=800&h=600&fit=crop"
+            alt="Environmental Testing"
+          />
+        </div>
+      </div>
 
-        <div class="service-detail" id="food">
-            <div class="service-content">
-                <h2>Food & Agricultural Products Testing</h2>
-                <p class="intro-text">We offer comprehensive microbiological and chemical testing to ensure food safety from production to distribution.</p>
-                <p class="intro-text">All tests are conducted in accordance with BAM, ISO and GSO standards, and Bahrain Ministry of Health regulations.</p>
-                
-                <h4>Testing Scope:</h4>
-                <ul>
-                    <li>Microbial contamination (Salmonella, E. coli, Listeria, etc.)</li>
-                    <li>Environmental Microbiology testing</li>
-                    <li>Elemental analysis & Heavy metals</li>
-                    <li>Nutritional Analysis (proteins, fats, Ash, carbohydrates Dry matter, etc.)</li>
-                    <li>Organic & Inorganic fertilizers (Physical testing, Nutrients, NPK & Microbiological testing)</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets\images\ServiceC4.jpeg?w=800&h=600&fit=crop" alt="Food Testing">
-            </div>
-        </div>
+      <div class="service-detail" id="construction">
+        <div class="service-content">
+          <h2>Construction Materials Testing</h2>
+          <p class="intro-text">
+            Reliable Laboratory Testing Services W.L.L ensures that construction
+            materials meet the Local and International standards.
+          </p>
+          <p class="intro-text">
+            We conduct precise laboratory and field testing on soil, concrete,
+            aggregates, steel, cement, Fly ash, Micro silica and asphalt as per
+            ASTM, BS, GSO and AASHTO standards.
+          </p>
 
-        <div class="service-detail" id="chemicals">
-            <div class="service-content">
-                <h2>Industrial Chemicals Testing</h2>
-                <p class="intro-text">We perform compositional analysis of raw and processed chemicals used in manufacturing, water treatment, and industrial applications to ensure the quality and purity.</p>
-                
-                <h4>Key Parameters:</h4>
-                <ul>
-                    <li>Elemental composition and impurities</li>
-                    <li>pH, conductivity, and density measurement</li>
-                    <li>Volatile matter and moisture content</li>
-                    <li>Trace element and additive analysis</li>
-                    <li>Chemical purity verification</li>
-                    <li>Contaminant identification</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets\images\aboutC1.jpeg?w=800&h=600&fit=crop" alt="Chemical Testing">
-            </div>
+          <h4>Testing Capabilities:</h4>
+          <ul>
+            <li>
+              Chemical analysis of Soil, Concrete, Aggregate, Cement, Fly ash,
+              Micro Silica and Bitumen
+            </li>
+            <!-- <li>Soil classification and compaction testing</li>
+            <li>Concrete strength and durability assessment</li>
+            <li>Aggregate gradation and quality testing</li>
+            <li>Steel reinforcement testing</li> -->
+          </ul>
         </div>
+        <div class="service-image">
+          <img
+            src="assets\images\ServiceC3.jpeg?w=800&h=600&fit=crop"
+            alt="Construction Testing"
+          />
+        </div>
+      </div>
 
-        <div class="service-detail" id="waste">
-            <div class="service-content">
-                <h2>Solid & Liquid Waste Testing</h2>
-                <p class="intro-text">Our waste testing services help industries identify, characterize, and manage hazardous and non-hazardous waste safely and responsibly.</p>
-                
-                <h4>Key Services:</h4>
-                <ul>
-                    <li>Leachate and heavy metal analysis (TCLP)</li>
-                    <li>Hazardous waste classification and toxicity testing</li>
-                    <li>Sludge and solid residue characterization</li>
-                    <li>Compliance audits and waste treatment monitoring</li>
-                    <li>Disposal recommendations and documentation</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="assets\images\ServiceC6.jpeg?w=800&h=600&fit=crop" alt="Waste Testing">
-            </div>
+      <div class="service-detail" id="petroleum">
+        <div class="service-content">
+          <h2>Petroleum Products Testing</h2>
+          <p class="intro-text">
+            Reliable Laboratory Testing Services W.L.L provides physical and
+            chemical testing for fuels, lubricants, and petroleum derivatives to
+            assess product performance, contamination, and compliance with ASTM
+            and API standards.
+          </p>
+
+          <h4>Testing Capabilities:</h4>
+          <ul>
+            <li>Flash point, viscosity, and density determination</li>
+            <li>Sulfur and carbon residue content</li>
+            <li>Distillation range and water content analysis</li>
+            <li>Lubricant degradation and oxidation testing</li>
+            <li>Elemental Analysis</li>
+            <li>Total Acid number and Base Number</li>
+          </ul>
         </div>
+        <div class="service-image">
+          <img
+            src="assets/images//oils-petroleum-products-testing-banner.webp"
+            alt="Petroleum Testing"
+          />
+        </div>
+      </div>
+
+      <div class="service-detail" id="food">
+        <div class="service-content">
+          <h2>Food & Agricultural Products Testing</h2>
+          <p class="intro-text">
+            We offer comprehensive microbiological and chemical testing to
+            ensure food safety from production to distribution.
+          </p>
+          <p class="intro-text">
+            All tests are conducted in accordance with BAM, ISO and GSO
+            standards, and Bahrain Ministry of Health regulations.
+          </p>
+
+          <h4>Testing Scope:</h4>
+          <ul>
+            <li>
+              Microbial contamination (Salmonella, E. coli, Listeria, etc.)
+            </li>
+            <li>Environmental Microbiology testing</li>
+            <li>Elemental analysis & Heavy metals</li>
+            <li>
+              Nutritional Analysis (proteins, fats, Ash, carbohydrates Dry
+              matter, etc.)
+            </li>
+            <li>
+              Organic & Inorganic fertilizers (Physical testing, Nutrients, NPK
+              & Microbiological testing)
+            </li>
+          </ul>
+        </div>
+        <div class="service-image">
+          <img
+            src="assets\images\ServiceC4.jpeg?w=800&h=600&fit=crop"
+            alt="Food Testing"
+          />
+        </div>
+      </div>
+
+      <div class="service-detail" id="chemicals">
+        <div class="service-content">
+          <h2>Industrial Chemicals Testing</h2>
+          <p class="intro-text">
+            We perform compositional analysis of raw and processed chemicals
+            used in manufacturing, water treatment, and industrial applications
+            to ensure the quality and purity.
+          </p>
+
+          <h4>Key Parameters:</h4>
+          <ul>
+            <li>Composition and impurities</li>
+            <li>pH, conductivity, and density measurement</li>
+            <li>Volatile matter and moisture content</li>
+            <li>Trace element and additive analysis</li>
+            <li>Chemical purity verification</li>
+            <li>Contaminant identification</li>
+          </ul>
+        </div>
+        <div class="service-image">
+          <img
+            src="assets\images\aboutC1.jpeg?w=800&h=600&fit=crop"
+            alt="Chemical Testing"
+          />
+        </div>
+      </div>
+
+      <div class="service-detail" id="waste">
+        <div class="service-content">
+          <h2>Solid & Liquid Waste Testing</h2>
+          <p class="intro-text">
+            Our waste testing services help industries identify, characterize,
+            and manage hazardous and non-hazardous waste safely and responsibly.
+          </p>
+
+          <h4>Key Services:</h4>
+          <ul>
+            <li>Leachate and heavy metal analysis (TCLP)</li>
+            <li>Hazardous waste classification and toxicity testing</li>
+            <li>Sludge and solid residue characterization</li>
+            <li>Compliance audits and waste treatment monitoring</li>
+            <li>Disposal recommendations</li>
+          </ul>
+        </div>
+        <div class="service-image">
+          <img
+            src="assets\images\ServiceC6.jpeg?w=800&h=600&fit=crop"
+            alt="Waste Testing"
+          />
+        </div>
+      </div>
     </div>
 
-            <!-- Footer - DARK -->
+    <!-- Footer - DARK -->
     <section class="footer text-light bg-dark">
-        <div class="container">
-            <div class="row" data-aos="fade-right">
-                <div class="col-lg-4 col-md-6 py-4 py-md-5">
-                    <div class="d-flex align-items-center">
-                        <h4 class="fw-bold">Reliable Laboratory Testing Services W.L.L</h4>
-                    </div>
-                    <p class="py-3 para-light">
-                        We are an ISO/IEC 17025 accredited independent testing laboratory
-                        based in the Kingdom of Bahrain, providing accurate and
-                        high-quality analytical services.
-                    </p>
-                    <div class="d-flex">
-                        <a href="#" class="me-3 text-light">
-                            <i class="fab fa-facebook-f fa-2x py-2"></i>
-                        </a>
-                        <a href="#" class="me-3 text-light">
-                            <i class="fab fa-linkedin fa-2x py-2"></i>
-                        </a>
-                        <a href="#" class="text-light">
-                            <i class="fab fa-instagram fa-2x py-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 py-4 py-md-5">
-                    <div>
-                        <h4 class="py-2 fw-bold">Quick Links</h4>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
-                            <a href="about.html" class="ms-3 text-light text-decoration-none">About Us</a>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
-                            <a href="service.html" class="ms-3 text-light text-decoration-none">Our Services</a>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right" style="color: var(--secondary);"></i>
-                            <a href="#contact" class="ms-3 text-light text-decoration-none">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-12 py-4 py-md-5">
-                    <div>
-                        <h4 class="py-2 fw-bold">Contact Info</h4>
-                        <div class="d-flex align-items-start py-2">
-                            <i class="fas fa-map-marker-alt mt-1" style="color: var(--secondary);"></i>
-                            <p class="ms-3 mb-0">Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain</p>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-phone-alt" style="color: var(--secondary);"></i>
-                            <p class="ms-3 mb-0">+973 1778 4500</p>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-envelope" style="color: var(--secondary);"></i>
-                            <p class="ms-3 mb-0">info@reliablelab.bh</p>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="far fa-clock" style="color: var(--secondary);"></i>
-                            <p class="ms-3 mb-0">Sun – Thu: 08:00 AM – 05:00 PM</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row" data-aos="fade-right">
+          <div class="col-lg-4 col-md-6 py-4 py-md-5">
+            <div class="d-flex align-items-center">
+              <h4 class="fw-bold">
+                Reliable Laboratory Testing Services W.L.L
+              </h4>
             </div>
+            <p class="py-3 para-light">
+              We are an ISO/IEC 17025 accredited independent testing laboratory
+              based in the Kingdom of Bahrain, providing accurate and
+              high-quality analytical services.
+            </p>
+            <div class="d-flex">
+              <a href="#" class="me-3 text-light">
+                <i class="fab fa-facebook-f fa-2x py-2"></i>
+              </a>
+              <a href="#" class="me-3 text-light">
+                <i class="fab fa-linkedin fa-2x py-2"></i>
+              </a>
+              <a href="#" class="text-light">
+                <i class="fab fa-instagram fa-2x py-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 py-4 py-md-5">
+            <div>
+              <h4 class="py-2 fw-bold">Quick Links</h4>
+              <div class="d-flex align-items-center py-2">
+                <i
+                  class="fas fa-caret-right"
+                  style="color: var(--secondary)"
+                ></i>
+                <a
+                  href="about.html"
+                  class="ms-3 text-light text-decoration-none"
+                  >About Us</a
+                >
+              </div>
+              <div class="d-flex align-items-center py-2">
+                <i
+                  class="fas fa-caret-right"
+                  style="color: var(--secondary)"
+                ></i>
+                <a
+                  href="service.html"
+                  class="ms-3 text-light text-decoration-none"
+                  >Our Services</a
+                >
+              </div>
+              <div class="d-flex align-items-center py-2">
+                <i
+                  class="fas fa-caret-right"
+                  style="color: var(--secondary)"
+                ></i>
+                <a href="#contact" class="ms-3 text-light text-decoration-none"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 py-4 py-md-5">
+            <div>
+              <h4 class="py-2 fw-bold">Contact Info</h4>
+
+              <!-- Address (opens in Google Maps) -->
+              <div class="d-flex align-items-start py-2">
+                <i
+                  class="fas fa-map-marker-alt mt-1"
+                  style="color: var(--secondary)"
+                ></i>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Building+150,+Road+25,+Block+203,+Tubli,+Kingdom+of+Bahrain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="ms-3 mb-0 text-decoration-none"
+                  style="color: inherit"
+                >
+                  Building 150, Road 25, Block 203, Tubli, Kingdom of Bahrain
+                </a>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="d-flex align-items-center py-2">
+                <i class="fab fa-whatsapp" style="color: var(--secondary)"></i>
+                <a
+                  href="https://wa.me/97339338686"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="ms-3 mb-0 text-decoration-none"
+                  style="color: inherit"
+                >
+                  +973 3933 8686
+                </a>
+              </div>
+
+              <!-- Phone -->
+              <div class="d-flex align-items-center py-2">
+                <i class="fas fa-phone-alt" style="color: var(--secondary)"></i>
+                <a
+                  href="tel:+97336767535"
+                  class="ms-3 mb-0 text-decoration-none"
+                  style="color: inherit"
+                >
+                  +973 3676 7535
+                </a>
+              </div>
+
+              <!-- Email -->
+              <div class="d-flex align-items-center py-2">
+                <i class="fas fa-envelope" style="color: var(--secondary)"></i>
+                <a
+                  href="mailto:Hello@relabsbh.com"
+                  class="ms-3 mb-0 text-decoration-none"
+                  style="color: inherit"
+                >
+                  Hello@relabsbh.com
+                </a>
+              </div>
+
+              <!-- Working Hours (optional link, opens Calendar) -->
+              <div class="d-flex align-items-center py-2">
+                <i class="far fa-clock" style="color: var(--secondary)"></i>
+                <a
+                  href="https://calendar.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="ms-3 mb-0 text-decoration-none"
+                  style="color: inherit"
+                >
+                  Sun – Thu: 08:00 AM – 05:00 PM
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <div class="bottom">
-        <div class="container">
-            <p class="mb-0">© 2025 Reliable Laboratory Testing Services W.L.L. All Rights Reserved.</p>
-        </div>
+    <div class="bottom py-3 text-light" style="background: #000">
+      <div class="container text-center">
+        <a
+          href="https://asmbahrain.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-light text-decoration-none"
+        >
+          <p class="mb-0">
+            © 2025 A&S Management Consultancy All Rights Reserved.
+          </p>
+        </a>
+      </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Scripts -->
+    <!-- Scripts -->
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/purecounter.min.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/aos.js"></script>
     <script src="./js/script.js"></script>
     <script>
-        // Initialize Carousel
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = new bootstrap.Carousel(document.getElementById('servicesCarousel'), {
-                interval: 5000,
-                pause: 'hover',
-                wrap: true
-            });
-        });
+      // Initialize Carousel
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = new bootstrap.Carousel(
+          document.getElementById("servicesCarousel"),
+          {
+            interval: 5000,
+            pause: "hover",
+            wrap: true,
+          }
+        );
+      });
 
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+      function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
         }
+      }
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu close
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          if (window.innerWidth < 992) {
+            const navbarContent = document.getElementById("navbarContent");
+            if (navbarContent) {
+              const bsCollapse = new bootstrap.Collapse(navbarContent, {
+                toggle: false,
+              });
+              bsCollapse.hide();
             }
+          }
         });
+      });
 
-        // Mobile menu close
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth < 992) {
-                    const navbarContent = document.getElementById('navbarContent');
-                    if (navbarContent) {
-                        const bsCollapse = new bootstrap.Collapse(navbarContent, { toggle: false });
-                        bsCollapse.hide();
-                    }
-                }
-            });
+      // Reveal service details on scroll
+      const serviceDetails = document.querySelectorAll(".service-detail");
+      const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const revealOnScroll = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
         });
+      }, revealOptions);
 
-        // Reveal service details on scroll
-        const serviceDetails = document.querySelectorAll('.service-detail');
-        const revealOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -100px 0px"
-        };
-
-        const revealOnScroll = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, revealOptions);
-
-        serviceDetails.forEach(detail => {
-            revealOnScroll.observe(detail);
-        });
+      serviceDetails.forEach((detail) => {
+        revealOnScroll.observe(detail);
+      });
     </script>
-</body>
+  </body>
 </html>
